@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+niuhaisha
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

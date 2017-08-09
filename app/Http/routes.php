@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 
 
@@ -50,3 +51,5 @@ Route::group([],function(){
 
 
 });
+=======
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b

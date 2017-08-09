@@ -492,6 +492,7 @@
         },
         {
             "name": "league/flysystem",
+<<<<<<< HEAD
             "version": "1.0.41",
             "source": {
                 "type": "git",
@@ -502,6 +503,18 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/thephpleague/flysystem/f400aa98912c561ba625ea4065031b7a41e5a155.zip",
                 "reference": "f400aa98912c561ba625ea4065031b7a41e5a155",
+=======
+            "version": "1.0.40",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "3828f0b24e2c1918bb362d57a53205d6dc8fde61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/thephpleague/flysystem/3828f0b24e2c1918bb362d57a53205d6dc8fde61.zip",
+                "reference": "3828f0b24e2c1918bb362d57a53205d6dc8fde61",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -522,13 +535,21 @@
                 "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
                 "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
                 "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+<<<<<<< HEAD
+=======
+                "league/flysystem-copy": "Allows you to use Copy.com storage",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
                 "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
                 "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
                 "league/flysystem-webdav": "Allows you to use WebDAV storage",
                 "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
+<<<<<<< HEAD
                 "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
                 "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
+=======
+                "spatie/flysystem-dropbox": "Allows you to use Dropbox storage"
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             },
             "type": "library",
             "extra": {
@@ -571,7 +592,11 @@
                 "sftp",
                 "storage"
             ],
+<<<<<<< HEAD
             "time": "2017-08-06T17:41:04+00:00"
+=======
+            "time": "2017-04-28T10:15:08+00:00"
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
         },
         {
             "name": "monolog/monolog",
@@ -1022,6 +1047,7 @@
         },
         {
             "name": "symfony/console",
+<<<<<<< HEAD
             "version": "v2.7.33",
             "source": {
                 "type": "git",
@@ -1032,6 +1058,18 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/symfony/console/a7844e72ac496096420e20d45970610b36fadde9.zip",
                 "reference": "a7844e72ac496096420e20d45970610b36fadde9",
+=======
+            "version": "v2.7.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "9227d7607b1b42b55bc46610afe3d516b5e89fa2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/symfony/console/9227d7607b1b42b55bc46610afe3d516b5e89fa2.zip",
+                "reference": "9227d7607b1b42b55bc46610afe3d516b5e89fa2",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -1078,11 +1116,19 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-07-29T07:58:31+00:00"
         },
         {
             "name": "symfony/css-selector",
             "version": "v2.8.26",
+=======
+            "time": "2017-07-01T09:26:27+00:00"
+        },
+        {
+            "name": "symfony/css-selector",
+            "version": "v2.8.25",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -1135,6 +1181,7 @@
         },
         {
             "name": "symfony/debug",
+<<<<<<< HEAD
             "version": "v2.7.33",
             "source": {
                 "type": "git",
@@ -1145,6 +1192,18 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/symfony/debug/0946243775c293ebaae7c417445d853527d84301.zip",
                 "reference": "0946243775c293ebaae7c417445d853527d84301",
+=======
+            "version": "v2.7.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/debug.git",
+                "reference": "2662c21dea8fb116c46fe1bcf819bc5dd4bc99fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/symfony/debug/2662c21dea8fb116c46fe1bcf819bc5dd4bc99fd.zip",
+                "reference": "2662c21dea8fb116c46fe1bcf819bc5dd4bc99fd",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -1188,11 +1247,19 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-07-26T20:00:18+00:00"
         },
         {
             "name": "symfony/dom-crawler",
             "version": "v2.7.33",
+=======
+            "time": "2017-06-01T20:44:56+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v2.7.32",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -1247,7 +1314,11 @@
         },
         {
             "name": "symfony/event-dispatcher",
+<<<<<<< HEAD
             "version": "v2.8.26",
+=======
+            "version": "v2.8.25",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -1307,7 +1378,11 @@
         },
         {
             "name": "symfony/finder",
+<<<<<<< HEAD
             "version": "v2.7.33",
+=======
+            "version": "v2.7.32",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -1356,7 +1431,11 @@
         },
         {
             "name": "symfony/http-foundation",
+<<<<<<< HEAD
             "version": "v2.7.33",
+=======
+            "version": "v2.7.32",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -1412,6 +1491,7 @@
         },
         {
             "name": "symfony/http-kernel",
+<<<<<<< HEAD
             "version": "v2.7.33",
             "source": {
                 "type": "git",
@@ -1422,6 +1502,18 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/symfony/http-kernel/7b161dd9abf60d6b5ce42a93e28aea6a3aa207f0.zip",
                 "reference": "7b161dd9abf60d6b5ce42a93e28aea6a3aa207f0",
+=======
+            "version": "v2.7.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-kernel.git",
+                "reference": "410de6be34b9c59e923233e3f25462034e0e70fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/symfony/http-kernel/410de6be34b9c59e923233e3f25462034e0e70fb.zip",
+                "reference": "410de6be34b9c59e923233e3f25462034e0e70fb",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1583,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-08-01T07:07:03+00:00"
+=======
+            "time": "2017-07-17T17:33:19+00:00"
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1662,7 +1758,11 @@
         },
         {
             "name": "symfony/process",
+<<<<<<< HEAD
             "version": "v2.7.33",
+=======
+            "version": "v2.7.32",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -1711,7 +1811,11 @@
         },
         {
             "name": "symfony/routing",
+<<<<<<< HEAD
             "version": "v2.7.33",
+=======
+            "version": "v2.7.32",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -1785,7 +1889,11 @@
         },
         {
             "name": "symfony/translation",
+<<<<<<< HEAD
             "version": "v2.7.33",
+=======
+            "version": "v2.7.32",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -1848,6 +1956,7 @@
         },
         {
             "name": "symfony/var-dumper",
+<<<<<<< HEAD
             "version": "v2.7.33",
             "source": {
                 "type": "git",
@@ -1858,6 +1967,18 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/symfony/var-dumper/86556ce430dce40acfebfce6a44f1047a5e4ddd5.zip",
                 "reference": "86556ce430dce40acfebfce6a44f1047a5e4ddd5",
+=======
+            "version": "v2.7.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "4ff94e7b24aef29d20e41d741f1ed7d507998455"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/symfony/var-dumper/4ff94e7b24aef29d20e41d741f1ed7d507998455.zip",
+                "reference": "4ff94e7b24aef29d20e41d741f1ed7d507998455",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -1906,7 +2027,11 @@
                 "debug",
                 "dump"
             ],
+<<<<<<< HEAD
             "time": "2017-07-25T14:57:06+00:00"
+=======
+            "time": "2017-06-14T16:20:11+00:00"
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2224,6 +2349,7 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
+<<<<<<< HEAD
             "version": "3.2.1",
             "source": {
                 "type": "git",
@@ -2234,12 +2360,28 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/phpDocumentor/ReflectionDocBlock/183824db76118b9dddffc7e522b91fa175f75119.zip",
                 "reference": "183824db76118b9dddffc7e522b91fa175f75119",
+=======
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/phpDocumentor/ReflectionDocBlock/46f7e8bb075036c92695b15a1ddb6971c751e585.zip",
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5",
                 "phpdocumentor/reflection-common": "^1.0@dev",
+<<<<<<< HEAD
                 "phpdocumentor/type-resolver": "^0.3.0",
+=======
+                "phpdocumentor/type-resolver": "^0.4.0",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
@@ -2265,6 +2407,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+<<<<<<< HEAD
             "time": "2017-08-04T20:55:59+00:00"
         },
         {
@@ -2279,6 +2422,22 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/phpDocumentor/TypeResolver/fb3933512008d8162b3cdf9e18dba9309b7c3773.zip",
                 "reference": "fb3933512008d8162b3cdf9e18dba9309b7c3773",
+=======
+            "time": "2017-07-15T11:38:20+00:00"
+        },
+        {
+            "name": "phpdocumentor/type-resolver",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/TypeResolver.git",
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/phpDocumentor/TypeResolver/9c977708995954784726e25d0cd1dddf4e65b0f7.zip",
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -2312,7 +2471,11 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
+<<<<<<< HEAD
             "time": "2017-06-03T08:32:36+00:00"
+=======
+            "time": "2017-07-14T14:27:02+00:00"
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
         },
         {
             "name": "phpspec/php-diff",
@@ -2350,6 +2513,7 @@
         },
         {
             "name": "phpspec/phpspec",
+<<<<<<< HEAD
             "version": "2.5.8",
             "source": {
                 "type": "git",
@@ -2360,6 +2524,18 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/phpspec/phpspec/d8a153dcb52f929b448c0bf2cc19c7388951adb1.zip",
                 "reference": "d8a153dcb52f929b448c0bf2cc19c7388951adb1",
+=======
+            "version": "2.5.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpspec/phpspec.git",
+                "reference": "a1dd5db803e75591c0e3cc1a054f7942133b4d05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/phpspec/phpspec/a1dd5db803e75591c0e3cc1a054f7942133b4d05.zip",
+                "reference": "a1dd5db803e75591c0e3cc1a054f7942133b4d05",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -2376,7 +2552,11 @@
                 "symfony/yaml": "~2.1|~3.0"
             },
             "require-dev": {
+<<<<<<< HEAD
                 "behat/behat": "^3.0.11,!=3.3.1",
+=======
+                "behat/behat": "^3.0.11",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "ciaranmcnulty/versionbasedtestskipper": "^0.2.1",
                 "phpunit/phpunit": "~4.4",
                 "symfony/filesystem": "~2.1|~3.0"
@@ -2424,7 +2604,11 @@
                 "testing",
                 "tests"
             ],
+<<<<<<< HEAD
             "time": "2017-07-29T17:19:38+00:00"
+=======
+            "time": "2017-05-12T06:09:08+00:00"
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
         },
         {
             "name": "phpspec/prophecy",
@@ -3239,6 +3423,7 @@
         },
         {
             "name": "symfony/yaml",
+<<<<<<< HEAD
             "version": "v3.3.6",
             "source": {
                 "type": "git",
@@ -3249,6 +3434,18 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/symfony/yaml/ddc23324e6cfe066f3dd34a37ff494fa80b617ed.zip",
                 "reference": "ddc23324e6cfe066f3dd34a37ff494fa80b617ed",
+=======
+            "version": "v3.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "1f93a8d19b8241617f5074a123e282575b821df8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/symfony/yaml/1f93a8d19b8241617f5074a123e282575b821df8.zip",
+                "reference": "1f93a8d19b8241617f5074a123e282575b821df8",
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
                 "shasum": ""
             },
             "require": {
@@ -3290,7 +3487,11 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-07-23T12:43:26+00:00"
+=======
+            "time": "2017-06-15T12:58:50+00:00"
+>>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
         },
         {
             "name": "webmozart/assert",
