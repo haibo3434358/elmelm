@@ -237,7 +237,7 @@
             <li>
                 <a href="#"><i class="icon-users"></i>用户管理  </a>
                 <ul>
-                    <li><a href="/admins/user/add">用户添加</a></li>
+                    <li><a href="/admins/user/create">用户添加</a></li>
                     <li><a href="/admins/user/index">用户列表</a></li>
                 </ul>
             </li>

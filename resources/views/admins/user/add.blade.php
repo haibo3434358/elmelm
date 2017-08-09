@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layer.admins.index')
 
 @section('title','用户添加页')
 
@@ -22,12 +22,12 @@
             <span><i class="icon-users"></i>用户添加</span>
         </div>
         <div class="mws-panel-body no-padding">
-            <form class="mws-form" action="insert" method="post" enctype ="multipart/form-data">
+            <form class="mws-form" action="{{url('admins/user')}}" method="post" enctype ="multipart/form-data">
                 <div class="mws-form-inline">
                     <div class="mws-form-row">
                         <label class="mws-form-label">用户名:</label>
                         <div class="mws-form-item">
-                            <input class="small" type="text" name='username'>
+                            <input class="small" type="text" name='uname'>
                         </div>
                     </div>
                     <div class="mws-form-row">
@@ -52,40 +52,6 @@
                         <label class="mws-form-label">手机:</label>
                         <div class="mws-form-item">
                             <input class="small" type="text" name='phone'>
-                        </div>
-                    </div>
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">验证码:</label>
-                        <div class="mws-form-item">
-                            <input class="small" type="text" name='captcha'>
-                            <img src="{!!captcha_src()!!} } " onclick="this.src='{{ url('/captcha') }}?r='+Math.random();" alt="" >
-                        </div>
-                    </div>
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">头像:</label>
-                        <div class="mws-form-item">
-                            <input class="small" type="file" name='pic'>
-                        </div>
-                    </div>
-
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">性别:</label>
-                        <div class="mws-form-item clearfix">
-                            <ul class="mws-form-list inline">
-                                <li><label><input type="radio" name='sex' value='m'> 男</label></li>
-                                <li><label><input type="radio" name='sex' value='w'> 女</label></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">状态:</label>
-                        <div class="mws-form-item clearfix">
-                            <ul class="mws-form-list inline">
-                                <li><label><input type="radio" name='status' value='1'> 启用</label></li>
-                                <li><label><input type="radio" name='status' value='0'> 禁用</label></li>
-
-                            </ul>
                         </div>
                     </div>
                 </div>

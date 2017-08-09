@@ -24,7 +24,7 @@ Route::group([],function(){
 
     Route::resource('admin/saleuser','Admin\SaleUserController');
 
-    Route::resource('admins/user','Admins\UserController');
+
 
 
 
@@ -38,6 +38,7 @@ Route::group([],function(){
 //Route::管理员后台
 Route::group([],function(){
 
+    Route::resource('admins/user','Admins\UserController');
 
 
 
