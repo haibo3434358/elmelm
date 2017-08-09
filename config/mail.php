@@ -64,6 +64,7 @@ return [
     | Here you may specify the encryption protocol that should be used when
     | the application send e-mail messages. A sensible default using the
 <<<<<<< HEAD
+<<<<<<< HEAD
     | transport layouts security protocol should provide great security.
 =======
 <<<<<<< HEAD
@@ -72,6 +73,9 @@ return [
     | transport layer security protocol should provide great security.
 >>>>>>> dd85221bd7efe5bb068824e987596ae42ef79c4b
 >>>>>>> origin/niuhaisha
+=======
+    | transport layer security protocol should provide great security.
+>>>>>>> origin/yongfeng
     |
     */
 

@@ -33,8 +33,13 @@ Route::group([],function(){
 
 
 
+
 //订单详情
 Route::resource('admin/dingdan','Admin\DingDanController');
+
+Route::resource('admin/saleuser','Admin\SaleUserController');
+
+
 
 
 
@@ -49,9 +54,13 @@ Route::resource('admin/dingdan','Admin\DingDanController');
 Route::group([],function(){
 
 
+
 //商家分类控制器
     Route::resource('admins/cate','Admins\CateController');
 
+
+
+    Route::resource('admins/user','Admins\UserController');
 
 
 
