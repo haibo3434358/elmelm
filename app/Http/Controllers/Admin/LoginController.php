@@ -39,8 +39,8 @@ class LoginController extends Controller
         if(strtoupper($input['code']) != session('code') ){
             return back()->with('error','验证码错误');
         }
-        session(['user'=>$user]);
-        redirect('admin/')
+//        session(['user'=>$user]);
+//        redirect('admin/');
     }
 
     // 验证码生成
