@@ -1,4 +1,4 @@
-@extends('layer.admin.index')
+@extends('layouts.index')
 
 @section('title','后台首页')
 
@@ -27,8 +27,8 @@
         @foreach($res as $k=>$v)
         <tr>
 
-            <td class="center">{{$v->sname}}</td>
-            <td class="center">{{$v->sphone}}</td>
+            <td class="center">{{$v->exname}}</td>
+            <td class="center">{{$v->exphone}}</td>
             <td class="center">{{$v->semail}}</td>
             <td class="center">{{$v->slogo}}</td>
             <td class="center">{{$v->exarea}}</td>

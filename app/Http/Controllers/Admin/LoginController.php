@@ -36,11 +36,13 @@ class LoginController extends Controller
         if(Crypt::decrypt($user->spassword) != trim($input['spassword'])){
             return back()->with('error','密码错误');
         }
-        if(strtoupper($input['code']) != session('code') ){
-            return back()->with('error','验证码错误');
-        }
-//        session(['user'=>$user]);
-//        redirect('admin/');
+//        if(strtoupper($input['code']) != session('code') ){
+//            return back()->with('error','验证码错误');
+//        }
+      session(['user'=>$user,]);
+
+
+       return redirect('/admin/saleuser');
     }
 
     // 验证码生成
@@ -68,7 +70,7 @@ class LoginController extends Controller
         header("Content-Type:image/jpeg");
         $builder->output();
 
-
+//
 //        //生成验证码图片的Builder对象，配置相应属性
 //        $builder = new CaptchaBuilder;
 //        //可以设置图片宽高及字体

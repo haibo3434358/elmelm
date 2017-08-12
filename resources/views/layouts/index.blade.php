@@ -90,13 +90,13 @@
 
     <!--当前链接则添加class:active-->
     <dd>
-     <a href="product_list.html" class="active">
+     <a href="#" class="active">
       用户管理
      </a>
     </dd>
 
     <dd>
-     <a href="recycle_bin.html">
+     <a href="saleuser">
       用户列表
      </a>
     </dd>
@@ -118,6 +118,7 @@
 </script>
 <script src="/admin/js/pie.js" type="text/javascript">
 </script>
+<script src="/layer/layer.js" type="text/javascript"></script>
 </body>
 
 </html>

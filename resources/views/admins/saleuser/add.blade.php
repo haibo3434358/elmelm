@@ -1,6 +1,6 @@
 @extends('layouts.admins')
 
-@section('title','用户添加页')
+@section('title','商家用户添加页')
 
 
 @section('content')
@@ -19,21 +19,21 @@
 
     <div class="mws-panel grid_8">
         <div class="mws-panel-header">
-            <span><i class="icon-users"></i>用户添加</span>
+            <span><i class="icon-users"></i>商家用户添加</span>
         </div>
         <div class="mws-panel-body no-padding">
-            <form class="mws-form" action="{{url('admins/user')}}" method="post" enctype ="multipart/form-data">
+            <form class="mws-form" action="{{url('admins/saleuser')}}" method="post" enctype ="multipart/form-data">
                 <div class="mws-form-inline">
                     <div class="mws-form-row">
                         <label class="mws-form-label">用户名:</label>
                         <div class="mws-form-item">
-                            <input class="small" type="text" name='uname'>
+                            <input class="small" type="text" name='sname'>
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">密码:</label>
                         <div class="mws-form-item">
-                            <input class="small" type="password" name='password'>
+                            <input class="small" type="password" name='spassword'>
                         </div>
                     </div>
                     <div class="mws-form-row">
@@ -45,13 +45,13 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">邮箱:</label>
                         <div class="mws-form-item">
-                            <input class="small" type="text" name='email'>
+                            <input class="small" type="text" name='semail'>
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">手机:</label>
                         <div class="mws-form-item">
-                            <input class="small" type="text" name='phone'>
+                            <input class="small" type="text" name='sphone'>
                         </div>
                     </div>
                 </div>

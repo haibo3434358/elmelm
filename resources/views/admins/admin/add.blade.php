@@ -1,6 +1,6 @@
 @extends('layouts.admins')
 
-@section('title','用户添加页')
+@section('title','管理员用户添加页')
 
 
 @section('content')
@@ -22,18 +22,18 @@
             <span><i class="icon-users"></i>用户添加</span>
         </div>
         <div class="mws-panel-body no-padding">
-            <form class="mws-form" action="{{url('admins/user')}}" method="post" enctype ="multipart/form-data">
+            <form class="mws-form" action="{{url('admins/admin')}}" method="post" enctype ="multipart/form-data">
                 <div class="mws-form-inline">
                     <div class="mws-form-row">
                         <label class="mws-form-label">用户名:</label>
                         <div class="mws-form-item">
-                            <input class="small" type="text" name='uname'>
+                            <input class="small" type="text" name='aname'>
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">密码:</label>
                         <div class="mws-form-item">
-                            <input class="small" type="password" name='password'>
+                            <input class="small" type="password" name='apassword'>
                         </div>
                     </div>
                     <div class="mws-form-row">
@@ -43,20 +43,19 @@
                         </div>
                     </div>
                     <div class="mws-form-row">
-                        <label class="mws-form-label">邮箱:</label>
-                        <div class="mws-form-item">
-                            <input class="small" type="text" name='email'>
+                        <label class="mws-form-label">权限:</label>
+                        <div class="mws-form-item clearfix">
+                            <ul class="mws-form-list inline">
+                                <li><label><input type="radio" name='auth' value='1'> 启用</label></li>
+                                <li><label><input type="radio" name='auth' value='0'> 禁用</label></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">手机:</label>
-                        <div class="mws-form-item">
-                            <input class="small" type="text" name='phone'>
-                        </div>
-                    </div>
+
                 </div>
                 {{ csrf_field() }}
                 <div class="mws-button-row">
+                    {{--<input type="hidden" name="atime" value="{{time()}}">--}}
                     <input value="注册用户" class="btn btn-danger" type="submit">
 
                 </div>

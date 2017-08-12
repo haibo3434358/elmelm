@@ -88,7 +88,7 @@
                                     </span>
                                 <span class="time">
                                         January 21, 2012
-                                    </span>
+                                </span>
                             </a>
                         </li>
                         <li class="read">
@@ -243,14 +243,61 @@
         <!-- Main Navigation -->
         <div id="mws-navigation">
             <ul>
-
+                <li>
+                    <a href="#"><i class="icon-users"></i>管理员管理  </a>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="icon-users"></i>用户管理  </a>
+                            <ul>
+                                <li><a href="/admins/admin/create" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户添加</a></li>
+                                <li><a href="/admins/admin" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="icon-lock"></i>权限管理  </a>
+                            <ul>
+                                <li><a href="/admins/permission/create" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">权限添加</a></li>
+                                <li><a href="/admins/permission" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">权限列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="icon-github-3"></i>角色管理  </a>
+                            <ul>
+                                <li><a href="/admins/role/create" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">角色添加</a></li>
+                                <li><a href="/admins/role" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">角色列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="icon-users"></i>普通用户管理  </a>
+                    <ul>
+                        <li><a href="/admins/user/create">用户添加</a></li>
+                        <li><a href="/admins/user">用户列表</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="icon-users"></i>商家管理  </a>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="icon-users"></i>用户管理  </a>
+                            <ul>
+                                <li><a href="/admins/saleuser/create" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户添加</a></li>
+                                <li><a href="/admins/saleuser" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <a href="#"><i class="icon-list"></i>商家分类</a>
                     <ul>
                         <li><a href="{{url('admins/cate')}}">分类列表</a></li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -310,6 +357,7 @@
 
 <!-- Demo Scripts (remove if not needed) -->
 <script src="/admins/js/demo/demo.dashboard.js"></script>
+<script src="/layer/layer.js" ></script>
 
 </body>
 </html>

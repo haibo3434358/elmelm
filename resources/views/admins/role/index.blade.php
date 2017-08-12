@@ -1,37 +1,18 @@
 @extends('layouts.admins')
 
-@section('title','用户列表页')
+@section('title','角色列表')
 
 
 @section('content')
 
     <div class="mws-panel grid_8">
         <div class="mws-panel-header">
-            <span><i class="icon-users"></i>用户列表</span>
+            <span><i class="icon-users"></i>角色列表</span>
         </div>
         <div class="mws-panel-body no-padding">
             <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
-                <form action="{{url('admins/user')}}" method="get">
-                    <div class="dataTables_length" id="DataTables_Table_1_length">
-                        <label>
-                            显示
-                            <select aria-controls="DataTables_Table_1" size="1" name="num">
-                                <option  value="5" @if($request->num == '5') selected="selected" @endif>
-                                    5
-                                </option>
-                                <option value="10" @if($request->num == '10') selected="selected" @endif>
-                                    10
-                                </option>
-                                <option value="15" @if($request->num == '15') selected="selected" @endif>
-                                    15
-                                </option>
-                                <option value="20" @if($request->num == '20') selected="selected" @endif>
-                                    20
-                                </option>
-                            </select>
-                            条
-                        </label>
-                    </div>
+                <form action="{{url('admins/admin')}}" method="get">
+
                     <div id="DataTables_Table_1_filter" class="dataTables_filter">
                         <label>
                             你要找:
@@ -45,23 +26,22 @@
                     <thead>
                     <tr role="row">
                         <th>ID</th>
-                        <th>姓名</th>
-                        <th>手机</th>
-                        <th>邮箱</th>
+                        <th>角色名称</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tbody aria-relevant="all" aria-live="polite" role="alert">
 
-                    @foreach($res as $k=>$v)
+                    @foreach($data as $k=>$v)
                         <tr class="@if ($k % 2 == 1) odd @else even @endif">
-                            <td class="  sorting_1">{{$v->uid}}</td>
-                            <td class=" ">{{$v->uname}}</td>
-                            <td class=" ">{{$v->phone}}</td>
-                            <td class=" ">{{$v->email}}</td>
+                            <td class="  sorting_1">{{$v->rid}}</td>
+                            <td class=" ">{{$v->rname}}</td>
+
                             <td class=" " style="align:center">
-                                <a  class="btn btn-info" href="{{url('admins/user/'.$v->uid.'/edit')}}">修改</a>
-                                <a  class="btn btn-danger" href="javascript:void(0)" onclick="delUser({{$v->uid}})">删除</a>
+                                <a class="btn btn-success" href="{{url('admins/role/auth/'.$v->rid)}}" >授权</a>
+                                <a class="btn btn-primary" href="javascript:void(0)" onclick="showUser({{$v->rid}})" >查看权限</a>
+                                <a  class="btn btn-info" href="{{url('admins/role/'.$v->rid.'/edit')}}">修改</a>
+                                <a  class="btn btn-danger" href="javascript:void(0)" onclick="delUser({{$v->rid}})">删除</a>
                             </td>
                         </tr>
                     @endforeach
@@ -107,14 +87,6 @@
                                 0px;}
                 </style>
 
-
-
-
-                <div id="DataTables_Table_1_paginate" class="dataTables_paginate paging_full_numbers">
-                    <div id='page'>
-                        {!! $res->render() !!}
-                    </div>
-                </div>
                 <script>
 
                     function delUser(id){
@@ -127,7 +99,7 @@
                             btn: ['确定','取消'] //按钮
                         }, function(){
 //            layer.msg('删除成功', {icon: 1});
-                            $.post("{{url('admins/user/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+                            $.post("{{url('admins/role/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
 //                console.log(data);
                                 if(data.status == 0){
                                     location.href = location.href;
@@ -138,6 +110,14 @@
                                 }
                             });
                         }, function(){
+                        });
+                    }
+                    function showUser(id){
+                        layer.open({
+                            type: 1,
+                            skin: 'layui-layer-rim', //加上边框
+                            area: ['420px', '240px'], //宽高
+                            content: ''
                         });
                     }
 

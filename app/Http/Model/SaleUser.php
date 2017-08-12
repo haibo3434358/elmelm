@@ -1,10 +1,10 @@
 <?php
 
-namespace App\\Model;
+namespace App\Http\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class saleuser extends Model
+class SaleUser extends Model
 {
     protected $table = 'elm_saleuser';
     protected $primaryKey = 'sid';

@@ -7,11 +7,15 @@
 
     <div class="mws-panel grid_8">
         <div class="mws-panel-header">
-            <span><i class="icon-users"></i>用户列表</span>
+        <span>
+            <i class="icon-table">
+            </i>
+            商家用户列表
+        </span>
         </div>
         <div class="mws-panel-body no-padding">
-            <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
-                <form action="{{url('admins/user')}}" method="get">
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                <form action="{{url('admins/saleuser')}}" method="get">
                     <div class="dataTables_length" id="DataTables_Table_1_length">
                         <label>
                             显示
@@ -35,36 +39,74 @@
                     <div id="DataTables_Table_1_filter" class="dataTables_filter">
                         <label>
                             你要找:
-                            <input aria-controls="DataTables_Table_1" type="text" name="search" value="{{isset($search)?$search:''}}">
+                            <input aria-controls="DataTables_Table_1" type="text" name="chaxun" value="{{isset($chaxun)?$chaxun:''}}">
                             <input type="submit" value="查询">
                         </label>
                     </div>
                 </form>
-                <table aria-describedby="DataTables_Table_1_info" id="DataTables_Table_1"
-                       class="mws-datatable-fn mws-table dataTable">
+                <table aria-describedby="DataTables_Table_0_info" id="DataTables_Table_0"
+                       class="mws-datatable mws-table dataTable">
                     <thead>
                     <tr role="row">
-                        <th>ID</th>
-                        <th>姓名</th>
-                        <th>手机</th>
-                        <th>邮箱</th>
-                        <th>操作</th>
+                        <th aria-label="Rendering engine: activate to sort column descending"
+                            aria-sort="ascending" style="width: 186px;" colspan="1" rowspan="1" aria-controls="DataTables_Table_0"
+                            tabindex="0" role="columnheader" class="sorting_asc">
+                            商家ID
+                        </th>
+                        <th aria-label="Browser: activate to sort column ascending" style="width: 251px;"
+                            colspan="1" rowspan="1" aria-controls="DataTables_Table_0" tabindex="0"
+                            role="columnheader" class="sorting">
+                            商家用户名
+                        </th>
+                        <th aria-label="Platform(s): activate to sort column ascending" style="width: 234px;"
+                            colspan="1" rowspan="1" aria-controls="DataTables_Table_0" tabindex="0"
+                            role="columnheader" class="sorting">
+                            商家状态
+                        </th>
+                        <th aria-label="Engine version: activate to sort column ascending" style="width: 160px;"
+                            colspan="1" rowspan="1" aria-controls="DataTables_Table_0" tabindex="0"
+                            role="columnheader" class="sorting">
+                            商家注册电话
+                        </th>
+                        <th aria-label="Engine version: activate to sort column ascending" style="width: 160px;"
+                            colspan="1" rowspan="1" aria-controls="DataTables_Table_0" tabindex="0"
+                            role="columnheader" class="sorting">
+                            商家注册邮箱
+                        </th>
+                        <th aria-label="CSS grade: activate to sort column ascending" style="width: 118px;"
+                            colspan="1" rowspan="1" aria-controls="DataTables_Table_0" tabindex="0"
+                            role="columnheader" class="sorting">
+                            操作
+                        </th>
                     </tr>
                     </thead>
                     <tbody aria-relevant="all" aria-live="polite" role="alert">
 
-                    @foreach($res as $k=>$v)
+                    @foreach($resp as $k=>$v)
                         <tr class="@if ($k % 2 == 1) odd @else even @endif">
-                            <td class="  sorting_1">{{$v->uid}}</td>
-                            <td class=" ">{{$v->uname}}</td>
-                            <td class=" ">{{$v->phone}}</td>
-                            <td class=" ">{{$v->email}}</td>
-                            <td class=" " style="align:center">
-                                <a  class="btn btn-info" href="{{url('admins/user/'.$v->uid.'/edit')}}">修改</a>
-                                <a  class="btn btn-danger" href="javascript:void(0)" onclick="delUser({{$v->uid}})">删除</a>
+                            <td class="  sorting_1">
+                                {{$v->sid}}
+                            </td>
+                            <td class=" ">
+                                {{$v->sname}}
+                            </td>
+                            <td class=" ">
+                                {{$v->status}}
+                            </td>
+                            <td class=" ">
+                                {{$v->sphone}}
+                            </td>
+                            <td class=" ">
+                                {{$v->semail}}
+                            </td>
+                            <td class=" ">
+                                <a  class="btn btn-info" href="{{url('admins/saleuser/'.$v->sid.'/edit')}}">修改</a>
+                                <a  class="btn btn-danger" href="javascript:void(0)" onclick="delUser({{$v->sid}})">删除</a>
                             </td>
                         </tr>
                     @endforeach
+
+
                     </tbody>
                 </table>
                 <style type="text/css">
@@ -112,7 +154,7 @@
 
                 <div id="DataTables_Table_1_paginate" class="dataTables_paginate paging_full_numbers">
                     <div id='page'>
-                        {!! $res->render() !!}
+                        {!! $resp->render() !!}
                     </div>
                 </div>
                 <script>
@@ -127,7 +169,7 @@
                             btn: ['确定','取消'] //按钮
                         }, function(){
 //            layer.msg('删除成功', {icon: 1});
-                            $.post("{{url('admins/user/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+                            $.post("{{url('admins/saleuser/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
 //                console.log(data);
                                 if(data.status == 0){
                                     location.href = location.href;
@@ -146,4 +188,5 @@
             </div>
         </div>
     </div>
+
 @endsection
