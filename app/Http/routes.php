@@ -30,6 +30,10 @@ Route::get('admin/crypt','Admin\LoginController@crypt');
 
 //卖家后台
 Route::group([],function(){
+    //商品二级分类路由
+    Route::resource('admin/cate','Admin\SaleCateController');
+    //优惠券路由
+    Route::resource('admin/youhui','Admin\YouHuiController');
 
 
 

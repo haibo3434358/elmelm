@@ -16,6 +16,7 @@
  </script>
  <script src="/admin/js/jquery.mCustomScrollbar.concat.min.js">
  </script>
+ <script src="/layer/layer.js"></script>
  <script>
      (function($) {
          $(window).load(function() {
@@ -46,7 +47,7 @@
 <!--header-->
 <header>
  <h1>
-  <img src="images/admin_logo.png" />
+  <img src="/admin/images/admin_logo.png" />
  </h1>
  <ul class="rt_nav">
   <li>
@@ -87,7 +88,6 @@
  <ul>
   <li>
    <dl>
-
     <!--当前链接则添加class:active-->
     <dd>
      <a href="product_list.html" class="active">
@@ -102,7 +102,52 @@
     </dd>
    </dl>
   </li>
+
+
+
+  <li>
+   <dl>
+    <!--当前链接则添加class:active-->
+    <dd>
+     <a href="{{url('admin/cate')}}" class="active">
+      分类管理
+     </a>
+    </dd>
+    <dd>
+     <a href="{{url('admin/cate/create')}}">
+      增加分类
+     </a>
+    </dd>
+    <dd>
+     <a href="{{url('admin/cate')}}">
+      分类列表
+     </a>
+    </dd>
+   </dl>
+  </li>
+
+  <li>
+   <dl>
+    <!--当前链接则添加class:active-->
+    <dd>
+     <a href="{{url('admin/youhui')}}" class="active">
+      优惠券管理
+     </a>
+    </dd>
+    <dd>
+     <a href="{{url('admin/youhui/create')}}">
+      增加优惠券
+     </a>
+    </dd>
+    <dd>
+     <a href="{{url('admin/youhui')}}">
+      优惠券列表
+     </a>
+    </dd>
+   </dl>
+  </li>
  </ul>
+
 </aside>
 <style>
  .dataStatistic{width:400px;height:200px;border:1px solid #ccc;margin:0
@@ -110,7 +155,8 @@
  #line{width:400px;height:200px;margin-top:-15px} #pie{width:400px;height:200px;margin-top:-15px}
 </style>
 <section class="rt_wrap content mCustomScrollbar">
- @section('content') @show
+ @section('content')
+ @show
 </section>
 <script src="/admin/js/amcharts.js" type="text/javascript">
 </script>
