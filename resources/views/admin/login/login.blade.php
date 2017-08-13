@@ -23,7 +23,7 @@ $(document).ready(function() {
   createCode();
   //测试提交，对接程序删除即可
 //  $(".submit_btn").click(function(){
-//	  location.href="index.html";
+//	  location.href="login.blade.php";
 //	  });
   function re_captcha() {
       $url = "{{ URL('/code/captcha') }}";
@@ -31,17 +31,22 @@ $(document).ready(function() {
       document.getElementById('127ddf0de5a04167a9e427d883690ff6').src = $url;
   }
 });
+
 </script>
 </head>
-@if(session('error'))
-    <p style="color:red">{{session('error')}}</p>
-@endif
+
 <body>
 <dl class="admin_login">
  <dt>
-  <strong>站点后台管理系统</strong>
+  <strong>elm 商家后台管理系统</strong>
   <em>Management System</em>
  </dt>
+ @if(session('error'))
+  <p style="color:red">{{session('error')}}</p>
+ @endif
+
+
+
  <form action="{{url('/admin/dologin')}}" method="post">
  <dd class="user_icon">
   <input type="text" name = 'sname' placeholder="账号" class="login_txtbx"/>
@@ -67,5 +72,6 @@ $(document).ready(function() {
   <p>陕B2-20080224-1</p>
  </dd>
 </dl>
+
 </body>
 </html>

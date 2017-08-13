@@ -1,4 +1,4 @@
-@extends('layer.admins.index')
+@extends('layouts.admins.index')
 
 @section('title','后台首页')
 

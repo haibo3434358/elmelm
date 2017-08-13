@@ -1,4 +1,4 @@
-@extends('layer.admins.index')
+@extends('layouts.admins.index')
 
 @section('title','用户添加页')
 

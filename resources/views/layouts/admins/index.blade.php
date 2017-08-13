@@ -16,6 +16,7 @@
  </script>
  <script src="/admin/js/jquery.mCustomScrollbar.concat.min.js">
  </script>
+    <script src="/layer/layer.js"></script>
  <script>
      (function($) {
          $(window).load(function() {
@@ -42,11 +43,12 @@
  </script>
 </head>
 
+
 <body>
 <!--header-->
 <header>
  <h1>
-  <img src="images/admin_logo.png" />
+  <img src="/admin/images/admin_logo.png" />
  </h1>
  <ul class="rt_nav">
   <li>
@@ -60,17 +62,12 @@
    </a>
   </li>
   <li>
-   <a href="#" class="admin_icon">
-    DeathGhost
+   <a href="{{url('admin/pass')}}" class="set_icon">
+    密码修改
    </a>
   </li>
   <li>
-   <a href="#" class="set_icon">
-    账号设置
-   </a>
-  </li>
-  <li>
-   <a href="login.html" class="quit_icon">
+   <a href="{{url('admin/quit')}}" class="quit_icon">
     安全退出
    </a>
   </li>
@@ -80,7 +77,7 @@
 <!--aside nav-->
 <aside class="lt_aside_nav content mCustomScrollbar">
  <h2>
-  <a href="index.html">
+  <a href="/admin/index.html">
    起始页
   </a>
  </h2>
@@ -101,6 +98,15 @@
      </a>
     </dd>
    </dl>
+   <dl>
+    <dt>商品</dt>
+    <dd><a href="{{url('admin/shangpin/create')}}">增加商品</a></dd>
+    <dd><a href="{{url('admin/shangpin')}}">显示商品</a></dd>
+   </dl>
+   <dl>
+    <dt>订单信息</dt>
+    <dd><a href="{{url('admin/dingdan/')}}">订单详情示例</a></dd>
+   </dl>
   </li>
  </ul>
 </aside>
@@ -110,7 +116,8 @@
  #line{width:400px;height:200px;margin-top:-15px} #pie{width:400px;height:200px;margin-top:-15px}
 </style>
 <section class="rt_wrap content mCustomScrollbar">
- @section('content') @show
+ @section('content')
+ @show
 </section>
 <script src="/admin/js/amcharts.js" type="text/javascript">
 </script>

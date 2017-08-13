@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Model\DingDan;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class DingDanController extends Controller
 {
@@ -14,9 +17,14 @@ class DingDanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(Request $request)
     {
-        //
+
+        $dingdan = DingDan::where('sjr','like','%'.$request->input('search').'%')->paginate($request->input('num',5));
+//        $dingdan = DingDan::paginate(5);
+//        DB::table('elm_order')->where()
+        return view('admin.dingdan.dingdan',compact('dingdan','request'));
     }
 
     /**
@@ -26,7 +34,7 @@ class DingDanController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -37,7 +45,7 @@ class DingDanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//
     }
 
     /**
@@ -59,8 +67,11 @@ class DingDanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dd = DingDan::find($id);
+//        dd($dd);
+        return view('admin.dingdan.index',compact('dd'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -71,8 +82,18 @@ class DingDanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        dd($request->all());
+            $input = Input::except('_token','_method');
+            $cate = DingDan::find($id);
+            $re = $cate->update($input);
+            if($re)
+            {
+                return redirect('admin/dingdan');
+            }else{
+                return back()->with('error','修改失败');
+            }
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -82,6 +103,19 @@ class DingDanController extends Controller
      */
     public function destroy($id)
     {
-        //
+//                dd($request->all());
+        $re =  DingDan::where('dxid',$id)->delete();
+        if($re){
+            $data =[
+                'status'=>0,
+                'msg'=>'删除成功',
+            ];
+        }else{
+            $data =[
+                'status'=>0,
+                'msg'=>'删除成功',
+            ];
+        }
+        return $data;
     }
 }
