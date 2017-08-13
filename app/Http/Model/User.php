@@ -21,8 +21,8 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var string
      */
-    protected $table = 'elm_saleuser';
-    protected $primaryKey = 'sid';
+    protected $table = 'elm_user';
+    protected $primaryKey = 'uid';
     protected $guarded = [];
     public $timestamps = false;
     /**

@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -60,5 +61,10 @@ class LoginController extends Controller
         }
         session(['user'=>$user]);
         return redirect('admin/dingdan');
+
+    public function login()
+    {
+        return view('admins.login.login ');
+
     }
 }

@@ -50,7 +50,7 @@ Route::post('admin/pass','Admin\IndexController@dopass');
 //添加商品,显示商品
 Route::resource('admin/shangpin','Admin\ShangPinController');
 
-//订单详情
+//  订单详情
 Route::resource('admin/dingdan','Admin\DingDanController');
 
 // Route::get('admin/dingdan','Admin\DingDanController@dingdan');
@@ -72,7 +72,12 @@ Route::resource('admin/saleuser','Admin\SaleUserController');
 //登入后台
 Route::get('admins/login','Admins\LoginController@login');
 
+//    Route::管理员后台
+//Route::group(['prefix'=>'admins','namespace'=>'Admins','middleware'=>'hasrole'],function(){
+
 Route::group([],function(){
+//    管理员登录控制器
+    Route::get('admins/login','Admins\LoginController@login');
 
 
 //管理员登入
@@ -80,13 +85,27 @@ Route::group([],function(){
 
 
 //商家分类控制器
+//    商家分类控制器
     Route::resource('admins/cate','Admins\CateController');
 
-
-
+//    管理员用户控制器路由
+    Route::resource('admins/admin','Admins\AdminController');
+//    给相应的用户赋予角色
+    Route::get('admins/admin/auth/{id}','Admins\AdminController@auth');
+//    保存给角色添加权限的路由
+    Route::post('admins/admin/doauth/','Admins\AdminController@doauth');
+//    普通用户控制器路由
     Route::resource('admins/user','Admins\UserController');
-
-
+//    商家用户控制器路由
+    Route::resource('admins/saleuser','Admins\SaleUserController');
+//    权限控制器路由
+    Route::resource('admins/permission','Admins\PermissionController');
+//    角色控制器路由
+    Route::resource('admins/role','Admins\RoleController');
+//    给相应的角色赋予权限
+    Route::get('admins/role/auth/{id}','Admins\RoleController@auth');
+//    保存给角色添加权限的路由
+    Route::post('admins/role/doauth/','Admins\RoleController@doauth');
 
 
 

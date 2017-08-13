@@ -6,15 +6,10 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-<<<<<<< HEAD
         "laravel/framework": "5.1.*",
         "gregwar/captcha": "1.*"
-=======
 
-        "laravel/framework": "5.1.*",
-        "gregwar/captcha": "1.*",
         "laravel/cashier": "~5.0"
->>>>>>> origin/niuhaisha
 
     },
     "require-dev": {

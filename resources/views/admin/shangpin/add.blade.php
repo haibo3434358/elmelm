@@ -1,4 +1,4 @@
-@extends('layouts.admins.index')
+@extends('layouts.index')
 
 @section('title','后台首页')
 

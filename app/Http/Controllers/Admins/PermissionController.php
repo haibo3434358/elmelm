@@ -1,39 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admins;
 
+use App\Http\Model\Permission;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
-use Hash;
-class SaleUserController extends Controller
+use Illuminate\Support\Facades\Input;
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $data = session('user');
-        $id = $data['sid'];
+        $res = Permission::get();
 
-        //获取数据
-        $res = DB::table('elm_saleuser')
-
-            ->join('elm_saleuser_detail','elm_saleuser.sid','=','elm_saleuser_detail.sid')
-            ->where('elm_saleuser.sid',$id)
-            ->select('slogo','exarea','exname','exphone','semail')
-
-
-            ->get();
-
-
-//        dd($res);
-        return view('admin.saleuser.index',compact('res'));
-
+        return view('admins.permission.index',compact('res'));
     }
 
     /**
@@ -43,7 +29,7 @@ class SaleUserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admins.permission.add');
     }
 
     /**
@@ -54,7 +40,13 @@ class SaleUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->except('_token');
+        $re = Permission::create($input);
+        if($re){
+            return redirect('admins/permission');
+        }else{
+            return back();
+        }
     }
 
     /**
@@ -76,7 +68,9 @@ class SaleUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data =  Permission::find($id);
+
+        return view('admins.permission.edit',compact('data'));
     }
 
     /**
@@ -88,7 +82,14 @@ class SaleUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = Input::except('_token','_method');
+        $link = Permission::find($id);
+        $re =  $link->update($input);
+        if($re){
+            return redirect('admins/permission');
+        }else{
+            return back()->with('msg','修改失败');
+        }
     }
 
     /**
@@ -99,6 +100,21 @@ class SaleUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $re =  Permission::where('permission_id',$id)->delete();
+//      删除成功
+        if($re){
+            $data = [
+                'status'=>0,
+                'msg'=>'删除成功',
+            ];
+        }else{
+            $data = [
+                'status'=>1,
+                'msg'=>'删除失败',
+            ];
+        }
+        return $data;
+
     }
+
 }

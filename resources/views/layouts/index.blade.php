@@ -90,13 +90,13 @@
    <dl>
     <!--当前链接则添加class:active-->
     <dd>
-     <a href="product_list.html" class="active">
+     <a href="#" class="active">
       用户管理
      </a>
     </dd>
 
     <dd>
-     <a href="recycle_bin.html">
+     <a href="saleuser">
       用户列表
      </a>
     </dd>
@@ -125,7 +125,15 @@
     </dd>
    </dl>
   </li>
-
+  <dl>
+   <dt>商品</dt>
+   <dd><a href="{{url('admin/shangpin/create')}}">增加商品</a></dd>
+   <dd><a href="{{url('admin/shangpin')}}">显示商品</a></dd>
+  </dl>
+  <dl>
+   <dt>订单信息</dt>
+   <dd><a href="{{url('admin/dingdan/')}}">订单详情示例</a></dd>
+  </dl>
   <li>
    <dl>
     <!--当前链接则添加class:active-->
@@ -164,6 +172,7 @@
 </script>
 <script src="/admin/js/pie.js" type="text/javascript">
 </script>
+<script src="/layer/layer.js" type="text/javascript"></script>
 </body>
 
 </html>
