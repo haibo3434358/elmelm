@@ -63,11 +63,19 @@ class LoginController extends Controller
         if(Crypt::decrypt($user->spassword) != trim($input['spassword'])){
             return back()->with('error','密码错误');
         }
+<<<<<<< HEAD
         if(strtoupper($input['code']) != session('code') ){
             return back()->with('error','验证码错误');
         }
         session(['user'=>$user]);
         return redirect('admin/dingdan');
+=======
+//        if(strtoupper($input['code']) != session('code') ){
+//            return back()->with('error','验证码错误');
+//        }
+        session(['user'=>$user]);
+        return redirect('admin/cate');
+>>>>>>> origin/niuhaisha
     }
 
     // 验证码生成

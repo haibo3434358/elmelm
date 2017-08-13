@@ -247,6 +247,7 @@
                 <li>
                     <a href="#"><i class="icon-list"></i>商家分类</a>
                     <ul>
+                        <li><a href="{{url('admins/cate/create')}}">增加列表</a></li>
                         <li><a href="{{url('admins/cate')}}">分类列表</a></li>
                     </ul>
                 </li>
