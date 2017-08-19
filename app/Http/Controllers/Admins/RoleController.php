@@ -150,4 +150,32 @@ class RoleController extends Controller
         }
         return $data;
     }
+    //查看权限
+    public function chakan(Request $request,$id)
+    {
+        //       dd($request->all());
+        $input = $request->except('_token');
+
+        $re1 = DB::table('elm_role_permission')->where('rid',$id)->get();
+
+        //遍历permission_id
+        $permission_id = [];
+        foreach ($re1 as $k=>$v){
+            $permission_id[] = $v->permission_id;
+        }
+//        存放所有权限名称
+        $str = '';
+        $str = '<div style="width:700px; height:225px; overflow:scroll;">';
+        $str .= '<table aria-describedby="DataTables_Table_1_info" id="DataTables_Table_1"
+                       class="mws-datatable-fn mws-table dataTable"><tr><th>ID</th><th>权限名称</th></tr>';
+        //遍历拿permission_name
+        foreach ($permission_id as $k=>$v){
+            //拿要查看的管理员的额permission_name
+            $str.= "<tr ><td align='center'>$v</tdalign:center><td align='center'>".DB::table('elm_permission')->where('permission_id',$v)->first()->permission_name."</td></tr>";
+       }
+        $str.= "</table></div>";
+
+        return $str;
+
+    }
 }

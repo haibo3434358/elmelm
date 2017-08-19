@@ -288,10 +288,12 @@
                             <ul>
                                 <li><a href="/admins/saleuser/create" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户添加</a></li>
                                 <li><a href="/admins/saleuser" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户列表</a></li>
+                                <li><a href="/admins/xianshi" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户审核</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="#"><i class="icon-list"></i>商家分类</a>
                     <ul>

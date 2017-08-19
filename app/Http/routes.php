@@ -24,7 +24,7 @@ Route::get('admin/captcha','Admin\LoginController@captcha');
 //加密测试
 Route::get('admin/crypt','Admin\LoginController@crypt');
 
-
+Route::get('test','Home\LoginController@test');
 
 
 
@@ -106,7 +106,13 @@ Route::group([],function(){
     Route::get('admins/role/auth/{id}','Admins\RoleController@auth');
 //    保存给角色添加权限的路由
     Route::post('admins/role/doauth/','Admins\RoleController@doauth');
+//    查看权限路由
+    Route::post('admins/role/index/{id}','Admins\RoleController@chakan');
 
+//    查看商家提交详情
+    Route::get('admins/xianshi','Admins\SaleUserController@xianshi');
+//     管理商家入驻
+    Route::post('admins/tongguo/{id}','Admins\SaleUserController@tongguo');
 
 
 
@@ -116,6 +122,44 @@ Route::group([],function(){
 
 
 });
+Route::group([],function(){
 
+    //前台首页
+    Route::get('home/shouye','Home\ShouYeController@index');
+    //前台登录
+    Route::get('home/login','Home\LoginController@index');
+    //验证用户名
+    Route::post('home/login/yanzhenguname','Home\LoginController@YanZhengUname');
+    //验证手机号
+    Route::post('home/login/yanzhengphone','Home\LoginController@YanZhengPhone');
+    //验证邮箱
+    Route::post('home/login/yanzhengemail','Home\LoginController@YanZhengEmail');
+    //注册
+    Route::post('home/login/zhuce','Home\LoginController@ZhuCe');
+    //登录
+    Route::post('home/login/denglu','Home\LoginController@DengLu');
+    //登录验证用户名
+    Route::post('home/login/dyanzhenguname','Home\LoginController@DYanZhengUname');
+    //登录验证密码
+    Route::post('home/login/dyanzhengpassword','Home\LoginController@DYanZhengPassword');
+
+
+    //商家入驻注册
+    Route::get('home/saleuser','Home\SaleUserController@index');
+    Route::post('home/saleuser/baocun','Home\SaleUserController@baocun');
+    //使用条款和协议
+    Route::get('home/agreement','Home\SaleUserController@agreement');
+
+    //商家详细信息完善
+    Route::get('home/saleuser/detail','Home\SaleUserController@detail');
+    Route::post('admins/saleuser/yanzheng','Admins\SaleUserController@yanzheng');
+
+
+
+
+    //遍历二级分类的路由
+    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
+
+});
 
 
