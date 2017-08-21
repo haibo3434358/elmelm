@@ -210,44 +210,6 @@
         <header class="topbar" role="navigation" ng-class="{shoptopbar: state.type === 'shop'}">
             <div class="container clearfix">
                 <h1>
-                    <a class="topbar-logo icon-logo" href="/" hardjump="">
-                        <span>饿了么</span>
-                    </a>
-                </h1>
-                <a class="topbar-item topbar-homepage focus" href="/" hardjump="">首页</a>
-                <a class="topbar-item" href="/profile/order" hardjump="" ng-class="{'focus': $root.locationpath[1] === 'order'}">我的订单</a>
-                <a class="topbar-item cooperation" href="//h5.ele.me/service/cooperation/" target="_blank">加盟合作</a>
-
-                <nav class="topbar-nav" ">
-
-                    <a class="topbar-nav-link" href="/support/center" hardjump="" target="_blank" style="font-size: 13px;">
-                        <i class="topbar-nav-icon icon-service"></i> 服务中心
-                    </a>
-                    <a class="topbar-nav-link" href="/support/rules/default" hardjump="" target="_blank" style="font-size: 13px;">规则中心</a>
-                    <div class="topbar-nav-link" style="font-size: 13px;">
-                        <i class="topbar-nav-icon icon-mobile" ></i> 手机应用
-                        <div class="dropbox topbar-mobile-dropbox">
-                            <span>扫一扫, 手机订餐更方便</span>
-                            <img class="topbar-nav-qrcode" src="/home/img/appqc.95e532.png" alt="扫一扫下载饿了么手机 App">
-                        </div>
-                    </div>
-
-                    <div topbar-profilebox="">
-                        <div class="topbar-profilebox">
-                            <span class="topbar-profilebox-avatar icon-profile"></span>
-                            <span class="topbar-nav-link" id="main_nav">
-                                <a class="cd-signin" href="#0">登录 |</a>
-                                <a class="cd-signup" href="#0">注册</a>
-                            </span>
-                            <span class="topbar-profilebox-wrapper ng-hide" ng-show="$root.user.username">
-<span class="topbar-profilebox-username ng-binding"></span>
-                                <span class="topbar-profilebox-btn icon-arrow-down ng-scope" ng-if="$root.topbarType !== 'checkout'"></span>
-                                <div class="dropbox topbar-profilebox-dropbox">
-                                    <a class="icon-profile" href="/home/gerenzhongxin" hardjump="">个人中心</a>
-                                    <a class="icon-star" href="/profile/favor" hardjump="">我的收藏</a>
-                                    <a class="icon-location" href="/profile/address" hardjump="">我的地址</a>
-                                    <a class="icon-setting" href="/profile/security" hardjump="">安全设置</a>
-                                    <a class="icon-logout" href="JavaScript:" ng-click="logout()">退出登录</a>
                     <a class="topbar-logo icon-logo" href="{{url('home/shouye')}}" >
                         <span>饿了么</span>
                     </a>
@@ -272,7 +234,7 @@
                             <span class="topbar-profilebox-username ng-binding"></span>
                                 <span class="topbar-profilebox-btn icon-arrow-down ng-scope" ng-if="$root.topbarType !== 'checkout'"></span>
                                 <div class="dropbox topbar-profilebox-dropbox">
-                                    <a class="icon-profile" href="/profile" hardjump="">个人中心</a>
+                                    <a class="icon-profile" href="/home/ziliao" hardjump="">个人中心</a>
                                     <a class="icon-logout" href="{{url('home/login/exit')}}">退出登录</a>
                                 </div>
                                 </span>
@@ -284,34 +246,6 @@
     </div>
 </div>
 
-<!-- <eleme-importantnotification></eleme-importantnotification> -->
-<div class="sidebar" role="complementary" ng-hide="layoutState && layoutState.hideSidebar">
-    <div class="sidebar-tabs">
-        <div class="toolbar-tabs-middle">
-            <a class="toolbar-btn icon-order toolbar-close" href="/profile/order" hardjump="" tooltip="我的订单" tooltip-placement="left" ubt-click="toolbar_order"></a>
-            <div class="toolbar-separator"></div>
-            <a class="toolbar-cartbtn icon-cart toolbar-open" href="JavaScript:" template="cart" ng-class="{'focus': (activeTemplate === 'cart' && isSidebarOpen), 'toolbar-cartbtn-shownum': foodCount.count}" ubt-click="390">购物车</a>
-            <div class="toolbar-separator"></div>
-            <a class="toolbar-btn icon-notice toolbar-open modal-hide" href="JavaScript:" template="message" ng-class="{'focus': (activeTemplate === 'message' && isSidebarOpen), 'toolbar-open': user, 'modal-hide': user}" tooltip="我的信息" tooltip-placement="left" ubt-click="392"></a>
-        </div>
-        <div class="toolbar-tabs-bottom">
-            <div class="toolbar-btn icon-QR-code">
-                <div class="dropbox toolbar-tabs-dropbox">
-                    <a href="http://static11.elemecdn.com/eleme/desktop/mobile/index.html" target="_blank">
-                        <img src="/home/img/appqc.95e532.png" alt="下载手机应用">
-                        <p>下载手机应用</p>
-                        <p class="icon-QR-code-bonus">即可参加分享红包活动</p>
-                    </a>
-                </div>
-            </div>
-            <a id="live800iconlink" class="toolbar-btn icon-service" online-service="" tooltip="在线客服" title="在线客服" tooltip-placement="left" target="_blank" href="JavaScript:" style="visibility: hidden;"></a>
-            <a class="toolbar-btn sidebar-btn-backtop icon-top" tooltip="回到顶部" title="回到顶部" href="JavaScript:" tooltip-placement="left" style="visibility: hidden;"></a>
-        </div>
-    </div>
-    <div class="sidebar-content"></div>
-</div>
-
-<!-- <eleme-sidebar ng-hide="layoutState && layoutState.hideSidebar"></eleme-sidebar> -->
 <!-- <div ng-view role="main"></div> -->
 <!-- 地址栏 -->
 <div class="container clearfix ng-scope">
@@ -341,7 +275,6 @@
 <div class="cd-user-modal">
     <div class="cd-user-modal-container">
         <ul class="cd-switcher">
-            <li><a href="#0">用户登录</a></li>
             <li><a href="#0">登录</a></li>
             <li><a href="#0">注册新用户</a></li>
         </ul>
@@ -360,7 +293,6 @@
                             <input type="password" name="dpassword" placeholder="请输入您的密码">
                             <span id='dpass'> *请输入8~16位用户名</span>
                         </li>
-                        {{csrf_field()}}
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
 {{--                        {{csrf_field()}}--}}
                     </ul>

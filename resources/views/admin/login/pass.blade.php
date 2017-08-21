@@ -28,17 +28,30 @@
                 {{csrf_field()}}
             <li>
                 <span class="item_name" style="width:120px;">用户名：</span>
-                <input type="text" class="textbox" name="sname" placeholder="请输入用户名..."/>
+                <input type="text" id="yonghu" class="textbox" name="sname" placeholder="请输入用户名..."/>
                 <span class="errorTips">请输入6-18位数字或英文</span>
             </li>
+                <script src="/home/js/jquery-1.8.3.min.js"></script>
+                <script src="/layer/layer.js"></script>
+                <script>
+                    $('#yonghu').blur(function(){
+//                        alert('111');
+                        var name = $('input[name=sname]');
+                        var dd = name.val();
+//                        console.log(dd);
+                        $.post("{{url('admin/pass/name')}}",{'_token':'{{csrf_token()}}','sname':dd},function(data){
+                            layer.alert(data);
+                        })
+                    })
+                </script>
             <li>
                 <span class="item_name" style="width:120px;">新密码：</span>
-                <input type="text" class="textbox"  name="spassword" placeholder="请输入密码..."/>
+                <input type="password" class="textbox"  name="spassword" placeholder="请输入密码..."/>
                 <span class="errorTips">请输入6-18位数字或英文</span>
             </li>
             <li>
                 <span class="item_name" style="width:120px;">确认密码：</span>
-                <input type="text" class="textbox" name="spassword1" placeholder="请再次输入密码"/>
+                <input type="password" class="textbox" name="spassword1" placeholder="请再次输入密码"/>
                 <span class="errorTips">请输入6-18位数字或英文</span>
             </li>
             <li>

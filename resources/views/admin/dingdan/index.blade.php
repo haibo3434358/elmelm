@@ -46,7 +46,7 @@
 
                     <li>
                         <span class="item_name"  style="width:120px;">订单状态：</span>
-                        <label class="single_selection"><input type="radio" @if($dd->dstatus == '付款'){ checked="checked"} value="付款" @endif name="dstatus"/>付款</label>
+                        <label class="single_selection"><input type="radio" @if($dd->dstatus == '付款'){ checked="checked"} @endif value="付款"  name="dstatus"/>付款</label>
                         <label class="single_selection"><input type="radio" @if($dd->dstatus == '配货'){ checked="checked"} @endif value="配货" name="dstatus"/>配货</label>
                         <label class="single_selection"><input type="radio" @if($dd->dstatus == '发货'){ checked="checked"} @endif value="发货" name="dstatus"/>发货</label>
                         <label class="single_selection"><input type="radio" @if($dd->dstatus == '确认收货'){ checked="checked"} @endif value="确认收货" name="dstatus"/>确认收货</label>

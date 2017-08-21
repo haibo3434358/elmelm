@@ -116,7 +116,10 @@ class LoginController extends Controller
             ->select('uface')
             ->get();
 //        dd($resl[0]->uface);
-        $user['uface'] = $resl[0]->uface;
+        if(!empty($resl[0]->uface)){
+            $user['uface'] = $resl[0]->uface;
+        }
+
 //        $user =
         //数据库的密码
         $oldpass = \Crypt::decrypt($user->password);

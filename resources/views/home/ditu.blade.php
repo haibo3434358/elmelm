@@ -6,24 +6,7 @@
   <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style> 
   <meta name="renderer" content="webkit" /> 
   <title ng-bind="SEO.title" class="ng-binding">饿了么-网上订餐_外卖_饿了么订餐官网</title> 
- <!--  <meta name="format-detection" content="telephone=no, email=no" /> 
-  <meta name="application-name" content="饿了么网上订餐" /> 
-  <meta name="msapplication-tooltip" content="饿了么网上订餐" /> 
-  <meta name="msapplication-starturl" content="./" /> 
-  <meta name="msapplication-tileimage" content="=http://static11.elemecdn.com/apple-touch-icon.png?v=2" /> 
-  <meta name="msapplication-tilecolor" content="#0088ff" /> 
-  <meta name="msapplication-task" content="name=切换地区;action-uri=http://ele.me/home;icon-uri=http://static11.elemecdn.com/apple-touch-icon.png?v=2" /> 
-  <meta name="msapplication-task" content="name=我要订餐;action-uri=http://ele.me?from=IE;icon-uri=http://static11.elemecdn.com/apple-touch-icon.png?v=2" /> 
-  <meta name="msapplication-task" content="name=订单中心;action-uri=http://ele.me/profile?from=IE;icon-uri=http://static11.elemecdn.com/apple-touch-icon.png?v=2" /> 
-  <meta name="msapplication-task" content="name=寻求帮助（HELP）;action-uri=http://ele.me/support?from=IE;icon-uri=http://static11.elemecdn.com/apple-touch-icon.png?v=2" /> 
-  <meta property="qc:admins" content="2263606250655" /> 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
-  <link rel="apple-touch-icon-precomposed" href="https://static2.ele.me/apple-touch-icon.png?v=2" /> 
-  <link rel="shortcut icon" href="https://static2.ele.me/eleme/desktop/media/img/favicon-16x16.png" type="image/png" /> 
-  <link rel="icon" href="https://static2.ele.me/eleme/desktop/media/img/favicon-16x16.png" type="image/png" sizes="16x16" /> 
-  <link rel="icon" href="https://static2.ele.me/eleme/desktop/media/img/favicon-32x32.png" type="image/png" sizes="32x32" /> 
-  <link rel="icon" href="https://static2.ele.me/eleme/desktop/media/img/favicon.png" type="im age/png" sizes="96x96" />--> 
-  <link href="./css/vendor.eb86f5.css" rel="stylesheet" /> 
+  <link href="./css/vendor.eb86f5.css" rel="stylesheet" />
   <link href="./css/home.a9ba71.css" rel="stylesheet" /> 
   <!--[if lte IE 8]><script>window.location.href='https://h.ele.me/activities/landing';</script><![endif]--> 
   <script src="./api" data-ref="API_CONFIG"></script> 
@@ -9285,8 +9268,8 @@
         <!-- end ngIf: mapCity.showCities -->
        </div>
        <div map-search="" hide-search-result="hideSearchResult" current-city="currentCity" map-mode="mapMode" class="map-search ng-isolate-scope">
-        <form action="/home/shouye" method="get"   class="mapsearch-inputbar ng-pristine ng-valid" ng-submit="search.showSuggests($event, search.keyword)">
-         <input placeholder="请输入你的收货地址（写字楼，小区，街道或者学校）" ng-model="search.keyword" ng-keyup="search.showSuggests($event, search.keyword)" ng-keydown="search.chooseSuggest($event)" ng-click="search.showSuggests($event)" ng-focus="search.showSuggests($event, search.keyword)" class="ng-pristine ng-valid" /> 
+        <form action="/home/dingdan/create" method="get"   class="mapsearch-inputbar ng-pristine ng-valid" ng-submit="search.showSuggests($event, search.keyword)">
+         <input name="dizhi" placeholder="请输入你的收货地址（写字楼，小区，街道或者学校）" ng-model="search.keyword" ng-keyup="search.showSuggests($event, search.keyword)" ng-keydown="search.chooseSuggest($event)" ng-click="search.showSuggests($event)" ng-focus="search.showSuggests($event, search.keyword)" class="ng-pristine ng-valid" />
          <button class="btn-stress" type="submit">搜 索</button>
         </form>
         <div class="mapsearch-suggestlist ui-scrollbar-light">

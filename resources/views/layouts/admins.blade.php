@@ -72,10 +72,10 @@
 
         <!-- Notifications -->
         <div id="mws-user-notif" class="mws-dropdown-menu">
-            <a href="#" data-toggle="dropdown" class="mws-dropdown-trigger"><i class="icon-exclamation-sign"></i></a>
+            {{--<a href="#" data-toggle="dropdown" class="mws-dropdown-trigger"><i class="icon-exclamation-sign"></i></a>--}}
 
-            <!-- Unread notification count -->
-            <span class="mws-dropdown-notif">35</span>
+            {{--<!-- Unread notification count -->--}}
+            {{--<span class="mws-dropdown-notif">35</span>--}}
 
             <!-- Notifications dropdown -->
             <div class="mws-dropdown-box">
@@ -131,10 +131,11 @@
 
         <!-- Messages -->
         <div id="mws-user-message" class="mws-dropdown-menu">
-            <a href="#" data-toggle="dropdown" class="mws-dropdown-trigger"><i class="icon-envelope"></i></a>
-
+            <a href="{{url('admins/pass')}}"  class="mws-dropdown-trigger">修改密码</a>
+            {{--data-toggle="dropdown"--}}
+            {{--<i class="icon-envelope"></i>--}}
             <!-- Unred messages count -->
-            <span class="mws-dropdown-notif">35</span>
+            {{--<span class="mws-dropdown-notif">35</span>--}}
 
             <!-- Messages dropdown -->
             <div class="mws-dropdown-box">
@@ -201,15 +202,8 @@
             </div>
 
             <!-- Username and Functions -->
-            <div id="mws-user-functions">
-                <div id="mws-username">
-                    Hello, John Doe
-                </div>
-                <ul>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Change Password</a></li>
-                    <li><a href="index.html">Logout</a></li>
-                </ul>
+            <div id="mws-user-message" class="mws-dropdown-menu">
+                <a href="{{url('admins/quit')}}"  class="mws-dropdown-trigger">安全退出</a>
             </div>
         </div>
     </div>
@@ -302,17 +296,17 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="icon-list"></i>友情链接</a>
+                    <a href="#"><i class="icon-users"></i>友情链接表  </a>
                     <ul>
-                        <li><a href="{{url('admins/link/create')}}">增加连接</a></li>
-                        <li><a href="{{url('admins/link')}}">链接列表</a></li>
+                        <li><a href="/admins/youqing/create">添加链接</a></li>
+                        <li><a href="/admins/youqing">查看链接</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="icon-list"></i>网站配置</a>
                     <ul>
                         <li><a href="{{url('admins/config')}}">网站配置</a></li>
-                    </ul>
+
                 </li>
             </ul>
         </div>

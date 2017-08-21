@@ -72,7 +72,7 @@ class ShangPinController extends Controller
         $data = DB::table('elm_goods_detail')->where('gid',$id)->update($inoo);
 //        $data = DB::table('elm_goods_detail')->insert($info);
         if ($data) {
-            return redirect('/admin/shangpin/index')->with('success','添加成功');
+            return redirect('/admin/shangpin/')->with('success','添加成功');
         } else {
             return back()->with('success', '添加失败');
         }
@@ -114,9 +114,6 @@ class ShangPinController extends Controller
 //        dd($request->all());
         $input = Input::except('_token','_method','gpic');
         $imgs = $request->hasFile('gpic');
-        if(!$imgs){
-            die('您没有上传文件,请返回');
-        }
         if ($imgs) {
             foreach ($request->file('gpic') as $k => $v) {
                 //修改名字
@@ -131,12 +128,20 @@ class ShangPinController extends Controller
                 $inoo = $tmp_img;
             }
         }
-        $cate = shangpin::find($id);
-        $re = $cate->update($input);
-        $data = DB::table('elm_goods_detail')->where('gid',$id)->update($inoo);
+        if($imgs){
+            $cate = shangpin::find($id);
+            $re = $cate->update($input);
+            $data = DB::table('elm_goods_detail')->where('gid',$id)->update($inoo);
+        }else{
+            $cate = shangpin::find($id);
+            $data = $cate->update($input);
+        }
+//        $cate = shangpin::find($id);
+//        $re = $cate->update($input);
+//        $data = DB::table('elm_goods_detail')->where('gid',$id)->update($inoo);
         if($data)
         {
-            return redirect('admin/shangpin');
+            return redirect('/admin/shangpin');
         }else{
             return back()->with('error','修改失败');
         }

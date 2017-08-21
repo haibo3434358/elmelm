@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Http\Model\UserAdmin;
 
 class HasRole
 {
@@ -15,6 +16,8 @@ class HasRole
      */
     public function handle($request, Closure $next)
     {
+
+//        dd(11);
         //     1   获取当前路由对应的控制器方法
 //        "App\Http\Controllers\Admin\IndexController@index"
         $route = \Route::current()->getActionName();
@@ -22,7 +25,8 @@ class HasRole
 //        return $route;
 //        2 获取当前用户对应的权限
 //           2.1 获取当前用户
-        $user = UserAdmin::find(session('auser')->aid);
+        $user = UserAdmin::find(session('useradmin')->aid);
+//        dd($user);
 //          2.2 获取当前用户对应的角色
         $roles =    $user->roles()->get();
 
@@ -53,7 +57,7 @@ class HasRole
         if(in_array($route,$newarr)){
             return $next($request);
         }else{
-            return redirect('back');
+            return view('admins.error');
         }
 
 

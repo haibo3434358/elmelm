@@ -15,7 +15,7 @@
                     <tr>
                         <th>优惠券id</th>
                         <th>优惠券名称</th>
-                        <th>优惠券路径</th>
+                        <th>优惠券</th>
                         <th>优惠券面值</th>
                         <th>操作</th>
                     </tr>
@@ -24,7 +24,7 @@
                     <tr>
                         <td class="center">{{$v->yhid}}</td>
                         <td class="center">{{$v->yhname}}</td>
-                        <td class="center">{{$v->yhpic}}</td>
+                        <td class="center"><img src="{{$v->yhpic}}" alt="" style="width:100px"></td>
                         <td class="center">{{$v->yhvalue}}</td>
 
                         <td class="center">

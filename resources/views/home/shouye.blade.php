@@ -20,9 +20,12 @@
             <style>
 
                 .erji {
-                    background-color: #f6f6f6;
-                    padding: 6px 0;
+                    /*background-color: #f6f6f6;*/
+                    /*padding: 6px 0;*/
                     margin-left: 160px;
+                }
+                a{
+                    text-align: none;
                 }
             </style>
             <script src="/home/js/jquery-1.8.3.min.js"></script>

@@ -38,6 +38,11 @@
                         text-align: right;
                     }
                 </style>
+
+
+
+
+
             <form action="{{url('home/doziliao')}}" enctype="multipart/form-data" method="post">
                 <ul class="ulColumn2">
                     {{csrf_field()}}
@@ -57,7 +62,7 @@
                     </li>
                     <li>
                         <span class="item_name" style="width:120px;">头&nbsp;&nbsp;&nbsp;像：</span>
-                        <input type="file"  name="uface" />
+                        <input type="file"  name="uface" style="margin-left:130px;margin-top:-20px"/>
                     </li>
                     <li>
                         <span class="item_name" style="width:120px;">性&nbsp;&nbsp;&nbsp;别：</span>
@@ -67,7 +72,8 @@
                     </li>
                     <li>
                         <span class="item_name" style="width:120px;"></span>
-                        <input type="submit" class="link_btn" value="修改个人资料"/>
+                        {{--<button type="button" class="btn btn-default btn-sm active">修改</button>--}}
+                        <input type="submit" class="link_btn" value="修改"/>
                     </li>
                 </ul>
                 <input type="hidden" name="uid" value="{{$user->uid}}">

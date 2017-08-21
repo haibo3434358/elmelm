@@ -79,6 +79,9 @@ class LoginController extends Controller
          if($resl[0]->status == 1){
              session(['user'=>$user]);
              return redirect('admin/dingdan');
+            session(['user'=>$user]);
+//        dd(session('code'));
+        return redirect('admin/dingdan');
 //        if(strtoupper($input['code']) != session('code') ){
 //            return back()->with('error','验证码错误');
              session(['user'=>$user]);
@@ -90,6 +93,8 @@ class LoginController extends Controller
 
          }
 
+//        session(['user'=>$user]);
+//        return redirect('admin/cate');
 
     }
 
