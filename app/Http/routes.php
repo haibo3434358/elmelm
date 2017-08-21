@@ -23,7 +23,8 @@ Route::post('admin/dologin','Admin\LoginController@dologin');
 Route::get('admin/captcha','Admin\LoginController@captcha');
 //加密测试
 Route::get('admin/crypt','Admin\LoginController@crypt');
-
+//卖家后台管理员修改
+Route::post('admin/pass/name','Admin\IndexController@name');
 
 
 
@@ -52,8 +53,10 @@ Route::resource('admin/shangpin','Admin\ShangPinController');
 
 //  订单详情
 Route::resource('admin/dingdan','Admin\DingDanController');
-
 // Route::get('admin/dingdan','Admin\DingDanController@dingdan');
+Route::get('home/sc/{id}','Admin\ShouCangController@index');
+Route::get('admin/sc/','Admin\ShouCangController@sc');
+Route::post('admin/ssc/{id}','Admin\ShouCangController@shanchu');
 
 Route::resource('admin/saleuser','Admin\SaleUserController');
 
@@ -72,19 +75,28 @@ Route::resource('admin/saleuser','Admin\SaleUserController');
 //登入后台
 Route::get('admins/login','Admins\LoginController@login');
 
+//退出
+Route::get('admins/quit','Admins\IndexController@quit');
+//修改用户
+Route::get('admins/pass','Admins\IndexController@pass');
+Route::post('admins/pass','Admins\IndexController@dopass');
+;
+
 //    Route::管理员后台
 //Route::group(['prefix'=>'admins','namespace'=>'Admins','middleware'=>'hasrole'],function(){
 
 Route::group([],function(){
 //    管理员登录控制器
     Route::get('admins/login','Admins\LoginController@login');
+    Route::post('admins/dologin','Admins\LoginController@dologin');
+    //验证码
+    Route::get('admins/captcha','Admins\LoginController@captcha');
 
+//管理员后台
+    Route::post('admins/pass/name','Admins\IndexController@name');
+    //友情链接控制器
+    Route::resource('admins/youqing','Admins\YouQingController');
 
-//管理员登入
-
-
-
-//商家分类控制器
 //    商家分类控制器
     Route::resource('admins/cate','Admins\CateController');
 
@@ -109,6 +121,43 @@ Route::group([],function(){
 
 
 
+
+
+
+
+
+
+});
+
+
+//前台路由
+Route::group([],function(){
+
+    //前台首页
+//    Route::get('home/shouye','Home\ShouYeController@index');
+//    //遍历二级分类的路由
+//    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
+    //商家信息
+    Route::get('home/shop','Home\ShangJiaController@index');
+    //加入购物车存入session
+        Route::post('home/session/{id}','Home\SessionController@session');
+    //测试session
+    Route::get('home/session/ss','Home\SessionController@ss');
+    //百度api
+    Route::resource('home/dingdan','Home\DingDanController');
+    //购物
+    Route::get('home/session/gouwu/{id}','Home\SessionController@gouwu');
+    //清空购物车
+    Route::get('home/session/destory','Home\SessionController@destory');
+    //购物显示
+    Route::post('home/session/gouwu','Home\SessionController@over');
+    //订单提交
+    Route::post('home/session/tijiao','Home\SessionController@tijiao');
+
+    Route::post('home/session/jiesuan','Home\SessionController@jiesuan');
+    Route::get('home/session/contant','Home\SessionController@contant');
+
+    Route::get('home/session/che','Home\SessionController@contant');
 
 
 

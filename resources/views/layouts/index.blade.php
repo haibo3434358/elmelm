@@ -61,17 +61,12 @@
    </a>
   </li>
   <li>
-   <a href="#" class="admin_icon">
-    DeathGhost
+   <a href="{{url('admin/pass')}}" class="set_icon">
+    密码修改
    </a>
   </li>
   <li>
-   <a href="#" class="set_icon">
-    账号设置
-   </a>
-  </li>
-  <li>
-   <a href="login.html" class="quit_icon">
+   <a href="{{url('admin/quit')}}" class="quit_icon">
     安全退出
    </a>
   </li>
@@ -152,6 +147,10 @@
       优惠券列表
      </a>
     </dd>
+   </dl>
+   <dl>
+    <dt>收藏</dt>
+    <dd><a href="{{url('admin/sc/')}}">收藏</a></dd>
    </dl>
   </li>
  </ul>

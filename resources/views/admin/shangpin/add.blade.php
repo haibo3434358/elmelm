@@ -39,11 +39,11 @@
                 </li>
                 <li>
                     <span class="item_name" style="width:120px;">上传图片：</span>
-                    <label class="uploadImg">
+                    <label>
                         {{--<input type="file"  name="gpic"  id="file_upload" multiple="true" />--}}
                         <input type="file" name='gpic[]' multiple readonly="readonly" >
                         {{--<input id="file_upload" name="gpic" type="file" multiple="true">--}}
-                        <span>上传图片</span>
+                        {{--<span>上传图片</span>--}}
                         {{--<input type="button" value="上传" />--}}
                     </label>
                     {{--<p><img id="img1" alt="上传后显示图片"  style="max-width:350px;max-height:100px;" /></p>--}}

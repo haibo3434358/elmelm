@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 //use Illuminate\Contracts\Validation\Validator;
+use App\Http\Model\SaleUser;
 use App\Http\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -27,7 +28,7 @@ class IndexController extends Controller
    public function quit()
    {
         session(['user'=>null]);
-        return redirect('admin/xxx');
+        return redirect('admin/login');
    }
    public function pass()
    {
@@ -57,7 +58,8 @@ class IndexController extends Controller
 
 
 //      0 判断原密码  新密码是否符合正则验证规则  表单验证
-//        Validator::make(要验证的数据，验证规则，错误的提示方式);
+//        Validator::make(要验证的数据，验证规则，
+//错误的提示方式);
        $validator = Validator::make($input, $rule, $mess);
        //如果验证失败
        if ($validator->fails()) {
@@ -68,8 +70,8 @@ class IndexController extends Controller
 
 
 ////      1 判断原密码是否正确
-//       $user = User::find(session('user')->sid);
-//
+       $user = SaleUser::find(session('user')->sid);
+//      dd($user);
 //       if ($input['spassword'] != Crypt::decrypt($user->spassword)) {
 //           return back()->with('errors', '原密码输入错误');
 //       }
@@ -87,5 +89,17 @@ class IndexController extends Controller
        }
 
    }
+    public function name(Request $request)
+    {
+//        echo '111';
+//        dd($request->sname);
+
+         $re = SaleUser::where('sname',$request->sname)->first();
+         if($re){
+             return '用户名已经存在,请重新输入';
+         }else{
+             return '用户名可正常使用';
+         }
+    }
 
 }

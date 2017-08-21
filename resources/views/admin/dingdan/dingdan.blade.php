@@ -49,6 +49,23 @@
         </tr>
        @endforeach
       </table>
+     <style>
+         .paging li span{
+             background: none repeat scroll 0 0 #19a97b;
+             border: 1px solid #139667;
+             color: white;
+             cursor: pointer;
+             display: inline-block;
+             padding: 5px 8px;
+             /*margin:30px;*/
+
+         }
+         .paging li{
+
+             float: left;
+         }
+
+     </style>
      <script>
          function delArt(id){
 //            参数1 要请求的服务器路由
@@ -75,7 +92,9 @@
              });
          }
      </script>
+
      <aside class="paging">
+         {{--{!! $dingdan->appends($request->all())->render() !!}--}}
          {!! $dingdan->appends($request->all())->render() !!}
      </aside>
  </div>

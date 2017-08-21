@@ -68,13 +68,14 @@ class LoginController extends Controller
         if(strtoupper($input['code']) != session('code') ){
             return back()->with('error','验证码错误');
         }
-        session(['user'=>$user]);
+            session(['user'=>$user]);
+//        dd(session('code'));
         return redirect('admin/dingdan');
 //        if(strtoupper($input['code']) != session('code') ){
 //            return back()->with('error','验证码错误');
 //        }
-        session(['user'=>$user]);
-        return redirect('admin/cate');
+//        session(['user'=>$user]);
+//        return redirect('admin/cate');
 
     }
 
