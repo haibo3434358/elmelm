@@ -299,6 +299,19 @@
                         <li><a href="{{url('admins/cate')}}">分类列表</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="icon-list"></i>友情链接</a>
+                    <ul>
+                        <li><a href="{{url('admins/link/create')}}">增加连接</a></li>
+                        <li><a href="{{url('admins/link')}}">链接列表</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="icon-list"></i>网站配置</a>
+                    <ul>
+                        <li><a href="{{url('admins/config')}}">网站配置</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

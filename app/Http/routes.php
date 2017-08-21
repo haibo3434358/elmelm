@@ -56,7 +56,12 @@ Route::resource('admin/dingdan','Admin\DingDanController');
 // Route::get('admin/dingdan','Admin\DingDanController@dingdan');
 
 Route::resource('admin/saleuser','Admin\SaleUserController');
-
+//卖家详情路由
+Route::get('admin/saleuserdetail','Admin\SaleUserController@saleuserdetail');
+//修改卖家详情路由
+    Route::get('admin/modifydetail/{sid}','Admin\SaleUserController@modifydetail');
+    //处理修改卖家详情
+    Route::post('admin/domodifydetail','Admin\SaleUserController@domodifydetail');
 
 
 
@@ -84,7 +89,7 @@ Route::group([],function(){
 
 
 
-//商家分类控制器
+
 //    商家分类控制器
     Route::resource('admins/cate','Admins\CateController');
 
@@ -114,6 +119,57 @@ Route::group([],function(){
 
 
 
+
+    //网站配置路由
+    Route::get('admins/config','Admins\ConfigController@index');
+
+
+
+
+
+});
+
+
+//前台路由
+Route::group([],function(){
+
+
+
+    //前台的地图页
+    Route::get('home/ditu','Home\ShouYeController@ditu');
+    //前台首页
+    Route::get('home/shouye','Home\ShouYeController@index');
+    //遍历二级分类的路由
+    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
+    //由二级分类home/gerenzhongxin遍历商家路由
+    Route::post('home/shouye/sj/{id}','Home\ShouYeController@shangJ');
+    //个人中心优惠券路由
+    Route::get('home/gerenzhongxin','Home\PeopleController@index');
+    //个人中心修改密码路由
+    Route::get('home/modifypass','Home\PeopleController@modifypass');
+    Route::post('home/modifypass','Home\PeopleController@doModifypass');
+    //个人资料路由
+    Route::get('home/ziliao','Home\PeopleController@ziliao');
+    //处理修改的个人资料路由
+    Route::post('home/doziliao','Home\PeopleController@doziliao');
+    //地址管理路由
+    Route::get('home/address','Home\PeopleController@address');
+    //修改地址路由
+    Route::get('home/modifyaddress/{addid}','Home\PeopleController@modifyaddress');
+    //处理修改地址的路由
+    Route::post('home/domodifyaddress','Home\PeopleController@domodifyaddress');
+    //删除地址的路由
+    Route::get('home/deladdress/{addid}','Home\PeopleController@deladdress');
+    //增加地址路由
+    Route::get('home/addaddress','Home\PeopleController@addaddress');
+    //保存增加的地址的路由
+    Route::post('home/saveaddress','Home\PeopleController@saveaddress');
+    //订单管理路由
+    Route::get('home/order','Home\PeopleController@order');
+
+    //订单完成页路由
+//    Route::get('home/shop/{id}','Home\ShouYeController@ab');
+    Route::get('home/order/{id}','Home\OrderController@over');
 
 });
 
