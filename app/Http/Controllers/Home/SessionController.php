@@ -42,7 +42,7 @@ class SessionController extends Controller
 //            $shangpinpin = $shangpin[0];
 //            dd($shangpin);
                 foreach($shangpin as $k=>$v){
-                    Cart::add($v->gid,$v->gname,$id,$v->gprice);
+                    Cart::add($v->gid,$v->gname,1,$v->gprice);
                 }
 //                if (Request::get('gid') && (Request::get('increment')) == 1) {
 //                    $rowId = Cart::search(array('id' => Request::get('gid')));
@@ -79,7 +79,7 @@ class SessionController extends Controller
     {
 //        dd($id);
 //        dd($request->all());
-        session(['uxid'=>14]);
+//        session(['uxid'=>14]);
         $shangjia = DB::table('elm_saleuser_detail')->where('sxid',$id)->get();
         $uid = DB::table('elm_user_detail')->leftjoin('elm_user_addr','elm_user_detail.uid','=','elm_user_addr.uid')->where('uxid',session('uxid'))->get();
 //       dd($uid);
@@ -97,17 +97,17 @@ class SessionController extends Controller
     }
     public function destory()
     {
+//        dd(Cart::content());
+//        dd(Cart::get($rowId));
         Cart::destroy();
+        return redirect('home/shop');
     }
-    public function tijiao(Request $request)
-    {
-        dd($request->all());
-    }
+
     public function contant()
     {
-        foreach(Cart::content() as $k=>$v){
-                var_dump($v);
-        }
+//        foreach(Cart::content() as $k=>$v){
+//                var_dump($v);
+//        }
     }
     public function che()
     {
@@ -122,8 +122,17 @@ class SessionController extends Controller
 
 
     }
-    public function jiesuan(Request $request)
+    public function tijiao(Request $request)
     {
-        dd($request);
+//        dd($request->all());
+        $dingdan=$request->except('_token','phone','dizhi','optionAddress','xingming','liuyan');
+        $arr = array_combine($dingdan['mingzi'],$dingdan['jiaqian']);
+//        dd($arr);
+//        $i = 0;
+        foreach($arr as $k=>$v){
+            DB::table('elm_order_detail')->insert(['sjr'=>$request->xingming,'dprice'=>$request->dizhi,'umsg'=>$k,'money'=>$v,'dd'=>$request->liuyan,'phone'=>$request->phone]);
+        }
+
+        return view('home.order');
     }
 }

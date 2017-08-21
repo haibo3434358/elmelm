@@ -65,7 +65,7 @@
      </ul> 
     </div> 
    </header>
-   <form  action="{{url('home/session/jiesuan')}}" method="post">
+   <form  action="{{url('submit/tijiao')}}" method="post">
     {{csrf_field()}}
    <div id="cart_wrap" class="cart-container cart-checkout">
     <header class="checkout-header">
@@ -96,18 +96,19 @@
       @foreach(Cart::content() as $row)
        <li class="cgroup-item s_food" data-id="13985256">
         <div class="cdish-name">
-         {{$row->name}}
+         <input type="text" name="mingzi[]" value=" {{$row->name}}" style="width:120px">
         </div>
         <div class="cdish-price symbol-rmb">
-         {{$row->price}}
+         <input type="text" name="jiaqian[]" value=" {{$row->price}}" style="width:40px;">
+
         </div>
         <div class="cdish-modify">
-         <a class="cdish-action desc dec_btn">-</a>
-         <input class="cdish-qty set_num" type="text" value="1" id="shu" />
-         <a class="cdish-action incr inc_btn" >+</a>
+         <a class="cdish-action desc dec_btn" onclick="jian()">-</a>
+         <input class="cdish-qty set_num" type="text" value="{{$row->qty}}" id="shu"  name="shuliang" />
+         <a class="cdish-action incr inc_btn"  onclick="jia()" >+</a>
         </div>
         <div class="cdish-total symbol-rmb">
-         {{$row->price}}
+         {{$row->price*$row->qty}}
         </div>
         <div class="cdish-del">
          <a class="del del_btn">&times;</a>
@@ -115,6 +116,17 @@
        @endforeach
       </ul>
      </section>
+     <script src="/home/js/jquery-1.8.3.min.js"></script>
+     <script src="/layer/layer.js"></script>
+     {{--<script>--}}
+      {{--var jiafa = '';--}}
+      {{--function jia(){--}}
+           {{--jiafa = $(this).find("div").find("input").val();--}}
+          {{--alert(jiafa);--}}
+
+
+      {{--}--}}
+     {{--</script>--}}
      {{--<script>--}}
       {{--function jia()--}}
       {{--{--}}
@@ -127,7 +139,7 @@
       <div id="module_note" class="cart-note">
        <div class="ctable-form group">
         <i class="icon-note"></i>
-        <input id="c_n_text" class="ctable-input" type="text" placeholder="联系电话" maxlength="50" />
+        <input id="c_n_text" name="phone" class="ctable-input" type="text" placeholder="联系电话" maxlength="50" />
        </div>
        <div id="n_p" class="cnote-bubble group hide">
         <a class="cnote-item c_n_i">不吃辣</a>
@@ -138,12 +150,21 @@
       </div>
       <div class="float-r">
        <div class="cart-summary basket_info">
-         共3份美食　应付金额：
-        <span id="total_price_basket" class="symbol-rmb cart-cost">{{Cart::tax()}}</span>
+         共{{Cart::count()}}份美食　应付金额：
+        <span id="total_price_basket" class="symbol-rmb cart-cost">{{Cart::subtotal()}}</span>
        </div>
       </div>
+
      </footer>
+     {{--<a href="{{url('home/shop')}}" class="btn btn-primary btn-lg  active" style="float:right;" role="button">继续购买</a>--}}
+     {{--</a>--}}
+     {{--<a href="{{url('home/session/destory')}}" class="btn btn-primary btn-lg active" style="float:right;" role="button">清空购物车</a>--}}
+     {{--</a>--}}
+     <a class="btn btn-default" href="{{url('home/shop')}}" style="float:right;" role="button">继续购买</a>
+     <a class="btn btn-default" href="{{url('home/session/destory')}}" style="float:right;" role="button">清空购物车</a>
+
     </article>
+
     <div id="module_addr" class="relative">
      <div id="module_address" class="cart-module caddress-module group">
       <h3 class="cmodule-title"><i class="icon-cmodule address"></i>送达地址：</h3>
@@ -151,7 +172,7 @@
        <span class="cmodule-info current_addr" data-id="1939846">
         <select name="dizhi" id="">
          @foreach($uid as $k=>$v)
-         <option value="{{$v->addid}}">{{$v->addr_xq}}</option>
+         <option value="{{$v->addr_xq}}">{{$v->addr_xq}}</option>
          @endforeach
         </select>
        </span>
@@ -159,6 +180,11 @@
        {{--{{$uid->addr_xq}}--}}
       </div>
      </div>
+     <link rel="stylesheet" href="/bs/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/bs/css/bootstrap-theme.min.css">
+     <script type="text/javascript" src="/bs/js/jquery.js"></script>
+     <script type="text/javascript" src="/bs/js/bootstrap.min.js"></script>
+
      <div id="modal_address" class="cart-modal cmodal-address checkout_panel">
       <h3 class="cmodal-header">送达地址</h3>
       <div class="cmodal-content">
@@ -209,17 +235,28 @@
      <h3 class="cmodule-title"><i class="icon-cmodule payment"></i>支付方式：</h3>
      <div class="cmodule-content">
       <div class="cart-payment">
-       <a id="offline_pay_btn" data-payonline="0" class="cpayment-choice
-          "> 餐到付款 </a>
-       <a id="online_pay_btn" data-payonline="1" class="cpayment-choice
-        ">在线支付</a>
+       <input id="c_n_text" name="xingming" class="ctable-input" type="text" placeholder="姓名" maxlength="50" />
+
       </div>
       <div id="activity_discount" class="activity-tip hide">
        在线支付立减
        <strong id="activity_discount_value">0</strong>元!
       </div>
      </div>
+
     </div>
+    <div id="module_payment" class="cart-module cpayment-module group">
+     <h3 class="cmodule-title"><i class="icon-cmodule payment"></i>留言：</h3>
+     <div class="cmodule-content">
+      <div class="cart-payment">
+       <input id="c_n_text" name="liuyan" class="ctable-input" type="text" placeholder="留言" maxlength="100" style="width:200px" />
+
+      </div>
+      <div id="activity_discount" class="activity-tip hide">
+       在线支付立减
+       <strong id="activity_discount_value">0</strong>元!
+      </div>
+     </div>
     <div id="cart_mask" class="cart-mask"></div>
     <div id="modal_userAuth" class="bs-modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
      <div class="bs-modal-dialog checkout-auth-modal">
@@ -259,10 +296,15 @@
      {{--<input type="hidden" id="value_time" name="deliver_time" value="" />--}}
      {{--<input type="hidden" id="value_payonline" name="is_online_paid" value="" />--}}
      {{--<button  class="ui-btn ui_submit btn-cart-checkout" type="button" data-loading="正在提交…">确认下单</button>--}}
-    <input type="submit" value="tijiao" />
     <button>提交</button>
     {{--<a href="{{url('home/session/che')}}">提交</a>--}}
    </form>
+
+   <!-- <form action="/submit" method="post">
+   {{csrf_field()}}
+     <input type="text">
+     <button>tijao</button>
+   </form> -->
 
    {{--<form action="/home/session/tijiao" method="post">--}}
     {{--<input type="text" name="aaa">--}}
