@@ -23,7 +23,7 @@ class LoginController extends Controller
 
 //        $duser = User::where('uname','wangyongfeng6')->first();
 //       dd($duser->password) ;
-        return view('layouts.home1');
+        return view('layouts.home');
 
     }
     public function YanZhengUname(Request $request)
@@ -99,6 +99,16 @@ class LoginController extends Controller
         $res = $request->except('_token');
 
         $user = User::where('uname',$res['duname'])->first();
+        $id = $user['uid'];
+
+        $resl = DB::table('elm_user')
+
+            ->join('elm_user_detail','elm_user.uid','=','elm_user_detail.uid')
+            ->where('elm_user.uid',$id)
+            ->select('uface')
+            ->get();
+//        dd($resl[0]->uface);
+        $user['uface'] = $resl[0]->uface;
 //        $user =
         //数据库的密码
         $oldpass = \Crypt::decrypt($user->password);
@@ -111,6 +121,11 @@ class LoginController extends Controller
             return back()->with('error','密码错误');
         }
         session(['user1'=>$user]);
+        return redirect('home/shouye');
+    }
+    public function exit()
+    {
+        session(['user1'=>[]]);
         return redirect('home/shouye');
     }
 

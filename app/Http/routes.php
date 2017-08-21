@@ -124,9 +124,24 @@ Route::group([],function(){
 });
 Route::group([],function(){
 
+
     //前台首页
     Route::get('home/shouye','Home\ShouYeController@index');
-    //前台登录
+    //商家详情页
+    Route::get('home/shop/{id}','Home\ShopController@index');
+    //遍历二级分类的路由
+
+    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
+    //由二级分类home/gerenzhongxin遍历商家路由
+    Route::post('home/shouye/sj/{id}','Home\ShouYeController@shangJ');
+
+    //点击加入购物车发送ajax路由
+    Route::post('home/shop/{gid}','Home\ShopController@gouwuche');
+    //点击减去购物车发送ajax路由
+    Route::post('home/shop/jian/{go_id}','Home\ShopController@jian');
+    //显示到页面中
+
+        //前台登录
     Route::get('home/login','Home\LoginController@index');
     //验证用户名
     Route::post('home/login/yanzhenguname','Home\LoginController@YanZhengUname');
@@ -138,6 +153,8 @@ Route::group([],function(){
     Route::post('home/login/zhuce','Home\LoginController@ZhuCe');
     //登录
     Route::post('home/login/denglu','Home\LoginController@DengLu');
+    //退出
+    Route::get('home/login/exit','Home\LoginController@exit');
     //登录验证用户名
     Route::post('home/login/dyanzhenguname','Home\LoginController@DYanZhengUname');
     //登录验证密码

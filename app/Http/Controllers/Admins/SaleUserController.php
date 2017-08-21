@@ -242,7 +242,7 @@ class SaleUserController extends Controller
 
         if ($data) {
 
-            return redirect('/admins/xianshi');
+            return redirect('/home/shouye');
         } else {
 
             return back();
