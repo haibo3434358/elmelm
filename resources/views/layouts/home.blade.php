@@ -34,6 +34,10 @@
     <script src="/home/js/main.a0cd82.js" type="text/javascript" crossorigin="anonymous"></script>
     <script src="/home/js/6936dbf3e7d94cffa954bcbcf2b79f38.js"></script>
     <script src="/home/js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" href="/home/bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/bs/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="/home/bs/js/jquery.js"></script>
+    <script type="text/javascript" src="/home/bs/js/bootstrap.min.js"></script>
     <style>
         .cd-user-modal {
             position: fixed;
@@ -244,6 +248,32 @@
                                     <a class="icon-location" href="/profile/address" hardjump="">我的地址</a>
                                     <a class="icon-setting" href="/profile/security" hardjump="">安全设置</a>
                                     <a class="icon-logout" href="JavaScript:" ng-click="logout()">退出登录</a>
+                    <a class="topbar-logo icon-logo" href="{{url('home/shouye')}}" >
+                        <span>饿了么</span>
+                    </a>
+                </h1>
+                <a class="topbar-item topbar-homepage focus" href="{{url('home/shouye')}}" hardjump="">首页</a>
+                <a class="topbar-item" href="/profile/order" hardjump="" ng-class="{'focus': $root.locationpath[1] === 'order'}">我的订单</a>
+                <a class="topbar-item cooperation" href="{{url('home/saleuser')}}" target="_blank">加盟合作</a>
+
+                <nav class="topbar-nav" ">
+
+                    <div topbar-profilebox="">
+                        <div class="topbar-profilebox">
+
+                            <img src="@if( session('user1')){{session('user1')['uface']}} @else /home/img/head_180.jpg @endif" alt="" style="width:35px;height:35px;">
+                            <span class="topbar-nav-link" id="main_nav" style="width:115px">
+                                @if( session('user1')){{session('user1')['uname']}} @else
+                                <a class="cd-signin" href="#0" style="font-size:12px">用户登录  |</a>
+                                <a class="cd-signup" href="#0" style="font-size:12px">注册</a>
+                                @endif
+                            </span>
+                            <span class="topbar-profilebox-wrapper ng-hide" ng-show="$root.user.username">
+                            <span class="topbar-profilebox-username ng-binding"></span>
+                                <span class="topbar-profilebox-btn icon-arrow-down ng-scope" ng-if="$root.topbarType !== 'checkout'"></span>
+                                <div class="dropbox topbar-profilebox-dropbox">
+                                    <a class="icon-profile" href="/profile" hardjump="">个人中心</a>
+                                    <a class="icon-logout" href="{{url('home/login/exit')}}">退出登录</a>
                                 </div>
                                 </span>
                         </div>
@@ -312,6 +342,7 @@
     <div class="cd-user-modal-container">
         <ul class="cd-switcher">
             <li><a href="#0">用户登录</a></li>
+            <li><a href="#0">登录</a></li>
             <li><a href="#0">注册新用户</a></li>
         </ul>
 
@@ -330,6 +361,8 @@
                             <span id='dpass'> *请输入8~16位用户名</span>
                         </li>
                         {{csrf_field()}}
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+{{--                        {{csrf_field()}}--}}
                     </ul>
                 </div>
                 <div class="login_btn">
@@ -362,6 +395,7 @@
                         </ul>
                     </div>
                     <div class="login_btn">
+                        <input type="hidden" name="yhvalue" value="10,">
                         {{ csrf_field() }}
                         <input type="submit" value="注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册">
                     </div>

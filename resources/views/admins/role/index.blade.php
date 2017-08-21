@@ -113,14 +113,18 @@
                         });
                     }
                     function showUser(id){
-                        layer.open({
-                            type: 1,
-                            skin: 'layui-layer-rim', //加上边框
-                            area: ['420px', '240px'], //宽高
-                            content: ''
-                        });
-                    }
+                        $.post("{{url('admins/role/index')}}/"+id,{'rid':'id','_token':'{{csrf_token()}}'},function(data){
+//                            console.log(data);
+                            layer.open({
+                                type: 1,
+                                skin: 'layui-layer-rim', //加上边框
+                                area: ['700px', '300px'], //宽高
+                                content:data
 
+                            });
+                        })
+
+                    }
 
                 </script>
             </div>
