@@ -228,7 +228,7 @@ class PeopleController extends Controller
 
 
     //引出订单管理页面
-    public function order()
+    public function myorder()
     {
         //从session中拿登录用户的信息
         $uid = session('user1')['uid'];
@@ -240,6 +240,6 @@ class PeopleController extends Controller
              ->where('elm_order.uid',14)
                 ->get();
 //       dd($data);
-        return view('home.order',compact('data'));
+        return view('home.myorder',compact('data'));
     }
 }

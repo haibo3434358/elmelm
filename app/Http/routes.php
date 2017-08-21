@@ -173,7 +173,7 @@ Route::group([],function(){
     //保存增加的地址的路由
     Route::post('home/saveaddress','Home\PeopleController@saveaddress');
     //订单管理路由
-    Route::get('home/order','Home\PeopleController@order');
+    Route::get('home/myorder','Home\PeopleController@myorder');
 
     //订单完成页路由
 //    Route::get('home/shop/{id}','Home\ShouYeController@ab');
@@ -185,19 +185,14 @@ Route::group([],function(){
 
     //前台首页
     Route::get('home/shouye','Home\ShouYeController@index');
-    //商家详情页
-    Route::get('home/shop/{id}','Home\ShopController@index');
+    
     //遍历二级分类的路由
 
     Route::post('home/shouye/{id}','Home\ShouYeController@erji');
     //由二级分类home/gerenzhongxin遍历商家路由
     Route::post('home/shouye/sj/{id}','Home\ShouYeController@shangJ');
 
-    //点击加入购物车发送ajax路由
-//    Route::post('home/shop/{gid}','Home\ShopController@gouwuche');
-    //点击减去购物车发送ajax路由
-//    Route::post('home/shop/jian/{go_id}','Home\ShopController@jian');
-    //显示到页面中
+
 
         //前台登录
     Route::get('home/login','Home\LoginController@index');
@@ -241,9 +236,9 @@ Route::group([],function(){
 Route::group([],function(){
 
     //前台首页
-//    Route::get('home/shouye','Home\ShouYeController@index');
+    Route::get('home/shouye','Home\ShouYeController@index');
 //    //遍历二级分类的路由
-//    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
+    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
     //商家信息
     Route::get('home/shop/{gid}','Home\ShangJiaController@index');
     //加入购物车存入session
@@ -259,9 +254,11 @@ Route::group([],function(){
     //购物显示
     Route::post('home/session/gouwu','Home\SessionController@over');
     //订单提交
-    Route::post('home/session/tijiao','Home\SessionController@tijiao');
+    Route::post('submit/tijiao','Home\SessionController@tijiao');
+    //订单提交==订单结算
+//    Route::post('home/session/jiesuan','Home\SessionController@jiesuan');
 
-    Route::post('home/session/jiesuan','Home\SessionController@jiesuan');
+
     Route::get('home/session/contant','Home\SessionController@contant');
 
     Route::get('home/session/che','Home\SessionController@contant');

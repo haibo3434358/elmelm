@@ -359,7 +359,7 @@ function yhq(){
 //我的订单
 function order()
 {
-    location.href = "{{url('/home/order')}}";
+    location.href = "{{url('/home/myorder')}}";
 }
 
 //    我的资料

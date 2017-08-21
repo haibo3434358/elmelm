@@ -24,7 +24,7 @@ class ShouCangController extends Controller
         if($res)
         {
             echo '收藏成功';
-            return back();
+            return redirect('home/shop');
         }else{
             echo '收藏失败';
         }
