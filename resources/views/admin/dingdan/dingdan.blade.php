@@ -30,18 +30,33 @@
          </section>
      </form>
       <table class="table">
+          <tr>
+              <th style="width:100px;">收件人：</th>
+              <th style="width: 130px">联系电话：</th>
+              <th style="width:70px;">收件地址：</th>
+
+              <th style="width:100px">下单时间：</th>
+
+              <th style="width:90px;">订单状态：</th>
+              <th style="width: 100px">订单价格：</th>
+
+              <th style="width:70px">订单备注：</th>
+              <th style="width: 90px;">
+                  操作
+              </th>
+          </tr>
        @foreach($dingdan as $k=>$v)
        <tr>
-        <td style="width:100px;">收件人：{{$v->sjr}}</td>
-        <td style="width: 130px">联系电话：{{$v->phone}}</td>
-        <td>收件地址：{{$v->dprice}}</td>
+        <td style="width:100px;">{{$v->sjr}}</td>
+        <td style="width: 130px">{{$v->phone}}</td>
+        <td style="width:70px;">{{$v->dprice}}</td>
 
-        <td style="width:100px">下单时间：{{$v->xdtime}}</td>
+        <td style="width:100px">{{$v->xdtime}}</td>
 
-        <td style="width:90px;">订单状态：{{$v->dstatus}}</td>
-       <td style="width: 100px">订单价格：{{$v->money}}</td>
+        <td style="width:90px;">{{$v->dstatus}}</td>
+       <td style="width: 100px">{{$v->money}}</td>
 
-           <td>订单备注：<mark>{{$v->dd}}</mark></td>
+           <td style="width:70px;"><mark>{{$v->dd}}</mark></td>
            <td style="width: 90px;">
                <a href="{{url('admin/dingdan/'.$v->dxid.'/edit')}}">修改</a>
                <a href="javascript:void(0)" onclick="delArt({{$v->dxid}})">删除</a>

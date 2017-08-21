@@ -44,6 +44,20 @@ class SessionController extends Controller
                 foreach($shangpin as $k=>$v){
                     Cart::add($v->gid,$v->gname,$id,$v->gprice);
                 }
+//                if (Request::get('gid') && (Request::get('increment')) == 1) {
+//                    $rowId = Cart::search(array('id' => Request::get('gid')));
+//                    $row = Cart::get($rowId[0]);
+//
+//                    Cart::update($rowId[0], $row->qty + 1);
+//                }
+//
+//                //decrease the quantity
+//                if (Request::get('gid') && (Request::get('decrease')) == 1) {
+//                    $rowId = Cart::search(array('id' => Request::get('gid')));
+//                    $row = Cart::get($rowId[0]);
+//
+//                    Cart::update($rowId[0], $row->qty - 1);
+//                }
 
 ////            //dd(session('shopcar.3.0')->gname);
 //              Cart::add($shangpinpin->gid,$shangpinpin->gname,$id,$shangpinpin->gprice);

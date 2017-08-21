@@ -21,8 +21,7 @@ class DingDanController extends Controller
     public function index(Request $request)
     {
 
-       s
-//        $dingdan = DingDan::paginate(5);
+        $dingdan = DingDan::paginate(5);
 //        DB::table('elm_order')->where()
         return view('admin.dingdan.dingdan',compact('dingdan','request'));
     }

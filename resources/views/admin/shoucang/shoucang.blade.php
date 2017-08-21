@@ -32,11 +32,11 @@
       <table class="table">
        @foreach($sc as $k=>$v)
        <tr>
-        <td style="width:100px;">收藏id：{{$v->scid}}</td>
-        <td style="width: 130px">收藏人id：{{$v->uid}}</td>
+        <td style="width:240px;">收藏id：{{$v->scid}}</td>
+        <td style="width: 240px">收藏人id：{{$v->uid}}</td>
         <td>收藏人信息：{{$v->uname}}</td>
 
-           <td style="width: 90px;">
+           <td style="width: 200px;">
                <a href="javascript:void(0)" onclick="delArt({{$v->scid}})">删除</a>
            </td>
         </tr>
@@ -70,7 +70,7 @@
                  btn: ['确定','取消'] //按钮
              }, function(){
 //            layer.msg('删除成功', {icon: 1});
-                 $.post("{{url('/admin/ssc/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+                 $.get("{{url('/admin/ssc/')}}/"+id,function(data){
 //                console.log(data);
                      if(data.status == 0){
                          location.href = location.href;

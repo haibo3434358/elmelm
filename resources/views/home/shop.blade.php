@@ -338,7 +338,8 @@
                     </em>
                 </span>
               </div>
-              <a class="shopguide-favor" href="{{url('/home/yhj/'.session('user')}}" >
+              <a class="shopguide-favor" href="#" >
+              {{--{{url('/home/sc/14'}}--}}
                   <!-- ngIf: isFavorShop -->
                   <!-- ngIf: !isFavorShop -->
                   <i ng-if="!isFavorShop" class="icon-favorite ng-scope">

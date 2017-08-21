@@ -54,9 +54,12 @@ Route::resource('admin/shangpin','Admin\ShangPinController');
 //  订单详情
 Route::resource('admin/dingdan','Admin\DingDanController');
 // Route::get('admin/dingdan','Admin\DingDanController@dingdan');
+//前台订单收藏
 Route::get('home/sc/{id}','Admin\ShouCangController@index');
+//后台收藏方法
 Route::get('admin/sc/','Admin\ShouCangController@sc');
-Route::post('admin/ssc/{id}','Admin\ShouCangController@shanchu');
+//后台收藏删除
+Route::get('admin/ssc/{id}','Admin\ShouCangController@shanchu');
 
 Route::resource('admin/saleuser','Admin\SaleUserController');
 
