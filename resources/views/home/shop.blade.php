@@ -282,7 +282,7 @@
                           <!-- end ngIf: shop.description -->
                           <li class="shopguide-extra-item address">
                               <p itemscope="" itemprop="streetAddress" itemtype="http://schema.org/PostalAddress">
-                                <span class="label">
+                               <span class="ng-binding">
                                     商家地址：
                                 </span>
                                   <span class="ng-binding">
@@ -291,7 +291,7 @@
                                   <meta itemprop="telephone" content="010-61604876 15001072754">
                               </p>
                               <p>
-                                <span class="label">
+                                <span class="ng-binding">
                                     营业时间：
                                 </span>
                                   <span itemprop="openingHours" class="ng-binding">
@@ -338,7 +338,7 @@
                     </em>
                 </span>
               </div>
-              <a class="shopguide-favor" href="#" >
+              <a class="shopguide-favor" href="{{url('home/sc/14')}}}" >
               {{--{{url('/home/sc/14'}}--}}
                   <!-- ngIf: isFavorShop -->
                   <!-- ngIf: !isFavorShop -->

@@ -137,9 +137,9 @@ Route::group([],function(){
 Route::group([],function(){
 
     //前台首页
-//    Route::get('home/shouye','Home\ShouYeController@index');
+    Route::get('home/shouye','Home\ShouYeController@index');
 //    //遍历二级分类的路由
-//    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
+    Route::post('home/shouye/{id}','Home\ShouYeController@erji');
     //商家信息
     Route::get('home/shop','Home\ShangJiaController@index');
     //加入购物车存入session
@@ -155,9 +155,11 @@ Route::group([],function(){
     //购物显示
     Route::post('home/session/gouwu','Home\SessionController@over');
     //订单提交
-    Route::post('home/session/tijiao','Home\SessionController@tijiao');
+    Route::post('submit/tijiao','Home\SessionController@tijiao');
+    //订单提交==订单结算
+//    Route::post('home/session/jiesuan','Home\SessionController@jiesuan');
 
-    Route::post('home/session/jiesuan','Home\SessionController@jiesuan');
+
     Route::get('home/session/contant','Home\SessionController@contant');
 
     Route::get('home/session/che','Home\SessionController@contant');
