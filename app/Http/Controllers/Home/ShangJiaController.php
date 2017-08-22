@@ -15,18 +15,19 @@ class ShangJiaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
+//        dd($id);
         //商品详情
-        $goods = DB::table('elm_goods_detail')->where('sxid','4')->get();
-        $goodgfl = DB::table('elm_goods_detail')->where('sxid','4')->groupBy('gfl')->get();
+        $goods = DB::table('elm_goods_detail')->where('sxid',$id)->get();
+        $goodgfl = DB::table('elm_goods_detail')->where('sxid',$id)->groupBy('gfl')->get();
         $grr = [];
         foreach($goodgfl as $k=>$v)
         {
             $grr[] = DB::table('elm_goods_detail')->where('gfl',$v->gfl)->get();
         }
 //        商家商品总量
-        $goodss = DB::table('elm_goods_detail')->where('sxid','4')->lists('gcount');
+        $goodss = DB::table('elm_goods_detail')->where('sxid',$id)->lists('gcount');
         $arr = '';
         foreach($goodss as $k=>$v)
         {
@@ -35,10 +36,9 @@ class ShangJiaController extends Controller
 //        商品销售总数
 //        dd($arr);
 //        卖家详情信息
-        $saleuser = DB::table('elm_saleuser_detail')->where('sxid','4')->get();
+        $saleuser = DB::table('elm_saleuser_detail')->where('sxid',$id)->get();
         $saleuser = $saleuser[0];
         return view('home.shop',compact('goods','saleuser','arr','goodss','goodgfl','grr'));
     }
-
 
 }

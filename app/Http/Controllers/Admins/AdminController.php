@@ -58,6 +58,7 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
+//        dd(session('useradmin'));
 
         //获取超级管理员的数据
         $re = UserAdmin::where('aname', 'like', '%' . $request['sousuo'] . '%')->paginate($request->input('num', 5));

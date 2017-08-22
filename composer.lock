@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc35b2a0582439d808922e928949c506",
+    "content-hash": "698db94eb18d0cc1c2effe10262d6fb2",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -953,62 +953,6 @@
                 "php"
             ],
             "time": "2016-09-16T12:04:44+00:00"
-        },
-        {
-            "name": "overtrue/laravel-shopping-cart",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/overtrue/laravel-shopping-cart.git",
-                "reference": "3d9dbe9f895db87c17de7e251e8cda65ed26fe43"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/overtrue/laravel-shopping-cart/3d9dbe9f895db87c17de7e251e8cda65ed26fe43.zip",
-                "reference": "3d9dbe9f895db87c17de7e251e8cda65ed26fe43",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "illuminate/session": "5.0.*",
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Overtrue\\LaravelShoppingCart\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "ShoppingCart": "Overtrue\\LaravelShoppingCart\\Facade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Overtrue\\LaravelShoppingCart\\": "src/LaravelShoppingCart/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "overtrue",
-                    "email": "anzhengchao@gmail.com"
-                }
-            ],
-            "description": "Shopping cart for Laravel Application.",
-            "keywords": [
-                "laravel",
-                "shopping",
-                "shopping cart"
-            ],
-            "time": "2017-07-02T22:28:03+00:00"
         },
         {
             "name": "paragonie/random_compat",

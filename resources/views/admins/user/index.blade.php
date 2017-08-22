@@ -1,4 +1,4 @@
-@extends('layouts.admins.index')
+@extends('layouts.admins')
 
 
 @section('title','用户列表页')

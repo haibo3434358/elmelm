@@ -85,19 +85,36 @@
    <dl>
     <!--当前链接则添加class:active-->
     <dd>
-     <a href="#" class="active">
+     <a href="{{url('admin/saleuser')}}" class="active">
       用户管理
      </a>
     </dd>
 
     <dd>
-     <a href="saleuser">
+     <a href="/admin/saleuser">
       用户列表
      </a>
     </dd>
    </dl>
   </li>
 
+
+  <li>
+   <dl>
+    <!--当前链接则添加class:active-->
+    <dd>
+     <a href="#" class="active">
+      卖家详情管理
+     </a>
+    </dd>
+
+    <dd>
+     <a href="{{url('admin/saleuserdetail')}}">
+      卖家详情列表
+     </a>
+    </dd>
+   </dl>
+  </li>
 
 
   <li>

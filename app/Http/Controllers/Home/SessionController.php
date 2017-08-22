@@ -80,10 +80,11 @@ class SessionController extends Controller
 //        dd($id);
 //        dd($request->all());
 //        session(['uxid'=>14]);
+//        dd(session('user1')->uid);
         $shangjia = DB::table('elm_saleuser_detail')->where('sxid',$id)->get();
-        $uid = DB::table('elm_user_detail')->leftjoin('elm_user_addr','elm_user_detail.uid','=','elm_user_addr.uid')->where('uxid',session('uxid'))->get();
+        $uid = DB::table('elm_user')->join('elm_user_addr','elm_user.uid','=','elm_user_addr.uid')->where('elm_user.uid',session('user1')->uid)->get();
 //       dd($uid);
-        $uxid = DB::table('elm_user_addr')->where('uxid',session('uxid'));
+//        $uxid = DB::table('elm_user_addr')->where('uxid',session('uxid'));
 //         $uid = $uid[0];
         $shangjia = $shangjia[0];
 //        $cart = Cart::content();
@@ -92,15 +93,15 @@ class SessionController extends Controller
 //al();
 //        dd($shangjia);
 //        dd($cart);
-        return view('home.gouwu',compact('shangjia','uid','cart','uxid'));
+        return view('home.gouwu',compact('shangjia','uid','cart','id'));
 
     }
-    public function destory()
+    public function destory($id)
     {
 //        dd(Cart::content());
 //        dd(Cart::get($rowId));
         Cart::destroy();
-        return redirect('home/shop');
+        return redirect('home/shop/'.$id);
     }
 
     public function contant()
@@ -130,7 +131,7 @@ class SessionController extends Controller
 //        dd($arr);
 //        $i = 0;
         foreach($arr as $k=>$v){
-            DB::table('elm_order_detail')->insert(['sjr'=>$request->xingming,'dprice'=>$request->dizhi,'umsg'=>$k,'money'=>$v,'dd'=>$request->liuyan,'phone'=>$request->phone]);
+            DB::table('elm_order_detail')->insert(['xdtime'=>date('Y-m-d h:i:s',time()),'ddh'=>time(),'dstatus'=>'付款','sjr'=>$request->xingming,'dprice'=>$request->dizhi,'umsg'=>$k,'money'=>$v,'dd'=>$request->liuyan,'phone'=>$request->phone,'sid'=>$request->sid,'uid'=>$request->uid]);
         }
 
         return view('home.order');

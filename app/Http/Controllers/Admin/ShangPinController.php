@@ -19,7 +19,12 @@ class ShangPinController extends Controller
      */
     public function index(Request $request)
     {
-        $res = shangpin::where('gname','like','%'.$request->input('search').'%')->paginate($request->input('num',5));
+//        $res = shangpin::where('gname','like','%'.$request->input('search').'%')->paginate($request->input('num',5));
+        $res = DB::table('elm_saleuser')
+            ->join('elm_saleuser_detail','elm_saleuser.sid','=','elm_saleuser_detail.sid')
+            ->join('elm_goods_detail','elm_saleuser_detail.sxid','=','elm_goods_detail.sxid')
+            ->where('elm_saleuser.sid',session('user')->sid)
+            ->where('gname','like','%'.$request->input('search').'%')->paginate($request->input('num',5));
         return view('admin.shangpin.index',compact('res','request'));
     }
 
@@ -47,9 +52,14 @@ class ShangPinController extends Controller
 //());
         $res = $request->except('_token','gpic');
         //得到用户信息session值  session('user')
-        dd(session('user'));
-        $quan = DB::table('elm_saleuser')->join('elm_saleuser_detail','elm_saleuser.sid','=','elm_saleuser_detail.sid')->join('elm_goods_detail','elm_saleuser_detail.sxid','=','elm_goods_detail.sxid');
-        dd($quan->gid);
+//        dd(session('user'));
+        $quan = DB::table('elm_saleuser')
+                                    ->join('elm_saleuser_detail','elm_saleuser.sid','=','elm_saleuser_detail.sid')
+                                    ->join('elm_goods_detail','elm_saleuser_detail.sxid','=','elm_goods_detail.sxid')
+                                    ->where('elm_saleuser.sid',session('user')->sid)
+                                    ->first();
+//        dd($quan->sxid);
+        $res['sxid']=$quan->sxid;
         $id = DB::table('elm_goods_detail')->orderBy('sxid')->insertGetId($res);
         if (!$id) {
             die('没有找到最后插入的id');

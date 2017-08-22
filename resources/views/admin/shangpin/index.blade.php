@@ -39,7 +39,6 @@
                 <th>单位</th>
                 <th>味道</th>
                 <th>菜品推销类型</th>
-                <th>菜品状态</th>
                 <th>操作</th>
             </tr>
             @foreach($res as $k=>$v)
@@ -51,7 +50,6 @@
                 <td class="center">盘</td>
                 <td class="center"><strong class="rmb_icon">{{$v->gtaste}}</strong></td>
                 <td class="center"><strong class="rmb_icon">{{$v->gfl}}</strong></td>
-                <td class="center"><strong class="rmb_icon">{{$v->gstatus}}</strong></td>
                 <td class="center">
                     <a href="{{url('admin/shangpin/'.$v->gid.'/edit')}}" title="修改" class="link_icon">&#101;</a>
                     <a href="javascript:void(0)" onclick="delArt({{$v->gid}})" title="删除" class="link_icon">&#100;</a>

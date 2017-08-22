@@ -338,7 +338,7 @@
                     </em>
                 </span>
               </div>
-              <a class="shopguide-favor" href="{{url('home/sc/14')}}}" >
+              <a class="shopguide-favor" href="{{url('home/sc/')}}" >
               {{--{{url('/home/sc/14'}}--}}
                   <!-- ngIf: isFavorShop -->
                   <!-- ngIf: !isFavorShop -->
@@ -772,12 +772,12 @@
                           </form>
                       </div>
                   </table>
-                  <script>
-                      function submit(){
-                          alert(11);
-//                          document.forms[0].submit();
-                      }
-                  </script>
+                  {{--<script>--}}
+                      {{--function submit(){--}}
+                          {{--alert(11);--}}
+{{--//                          document.forms[0].submit();--}}
+                      {{--}--}}
+                  {{--</script>--}}
               </div>
           </div>
       </div>

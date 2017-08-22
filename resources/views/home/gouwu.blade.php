@@ -160,9 +160,10 @@
      {{--</a>--}}
      {{--<a href="{{url('home/session/destory')}}" class="btn btn-primary btn-lg active" style="float:right;" role="button">清空购物车</a>--}}
      {{--</a>--}}
-     <a class="btn btn-default" href="{{url('home/shop')}}" style="float:right;" role="button">继续购买</a>
-     <a class="btn btn-default" href="{{url('home/session/destory')}}" style="float:right;" role="button">清空购物车</a>
-
+     <a class="btn btn-default" href="{{url('home/shop')}}/{{$id}}" style="float:right;" role="button">继续购买</a>
+     <a class="btn btn-default" href="{{url('home/session/destory')}}/{{$id}}" style="float:right;" role="button">清空购物车</a>
+     <input type="hidden" value="{{$id}}" name="sid">
+     <input type="hidden" value="{{session('user1')->uid}}" name="uid">
     </article>
 
     <div id="module_addr" class="relative">

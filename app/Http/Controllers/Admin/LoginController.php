@@ -6,7 +6,7 @@ use App\Http\Model\User;
 use App\Http\Model\SaleUser;
 use Validator;
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder;
@@ -68,12 +68,31 @@ class LoginController extends Controller
         if(strtoupper($input['code']) != session('code') ){
             return back()->with('error','验证码错误');
         }
+//        dd($user);
+        $id = $user->sid;
+        $resl = DB::table('elm_saleuser')
+            ->join('elm_saleuser_detail','elm_saleuser.sid','=','elm_saleuser_detail.sid')
+            ->where('elm_saleuser_detail.sid',$id)
+            ->select('status')
+            ->get();
+//            dd($resl);
+         if($resl[0]->status == 1){
+             session(['user'=>$user]);
+             return redirect('admin/dingdan');
             session(['user'=>$user]);
 //        dd(session('user')->sid);
         return redirect('admin/dingdan');
 //        if(strtoupper($input['code']) != session('code') ){
 //            return back()->with('error','验证码错误');
+             session(['user'=>$user]);
+             return redirect('admin/cate');
 //        }
+
+         } else {
+            return back()->with('error','您的审核未通过,请耐心等待.............');
+
+         }
+
 //        session(['user'=>$user]);
 //        return redirect('admin/cate');
 

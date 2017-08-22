@@ -58,11 +58,7 @@
                             role="columnheader" class="sorting">
                             商家用户名
                         </th>
-                        <th aria-label="Platform(s): activate to sort column ascending" style="width: 234px;"
-                            colspan="1" rowspan="1" aria-controls="DataTables_Table_0" tabindex="0"
-                            role="columnheader" class="sorting">
-                            商家状态
-                        </th>
+
                         <th aria-label="Engine version: activate to sort column ascending" style="width: 160px;"
                             colspan="1" rowspan="1" aria-controls="DataTables_Table_0" tabindex="0"
                             role="columnheader" class="sorting">
@@ -90,9 +86,7 @@
                             <td class=" ">
                                 {{$v->sname}}
                             </td>
-                            <td class=" ">
-                                {{$v->status}}
-                            </td>
+
                             <td class=" ">
                                 {{$v->sphone}}
                             </td>

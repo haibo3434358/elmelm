@@ -90,7 +90,7 @@ class IndexController extends Controller
     {
 //        echo '111';
 //        dd($request->sname);
-        dd($request);
+//        dd($request);
         $re = UserAdmin::where('aname',$request->aname)->first();
         if($re){
             return '用户名已经存在,请重新输入';

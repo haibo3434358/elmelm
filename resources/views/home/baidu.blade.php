@@ -9,6 +9,10 @@
         body{height:100%;margin:0px;padding:0px}
         #container{height:100%}
     </style>
+    <link rel="stylesheet" href="/bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bs/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="/bs/js/jquery.js"></script>
+    <script type="text/javascript" src="/bs/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Zcaskv0rFE6vl7Arw9gNhkGKnUv1SuNZ">
 //        var map = new BMap.Map("container");
 //        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
@@ -68,7 +72,7 @@ var map = new BMap.Map("container");
 map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
 var local = new BMap.LocalSearch(map,
     { renderOptions:{map: map, autoViewport: true}});
-local.searchNearby("小吃", "前门");
+local.searchNearby("小吃", "{{$dizhi}}");
 //map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别
 //        var traffic = new BMap.TrafficLayer();        // 创建交通流量图层实例
 //var map = new BMap.Map("container");
@@ -106,6 +110,10 @@ window.onload = function(){
     panorama.setPov({heading: -40, pitch: 6});  //4
 }
 </script>
+<a href="{{url('home/shouye')}}" style="float:right">
+    <a href="{{url('home/shouye')}}" class="btn btn-primary btn-lg active" role="button">进入购物主页</a>
+   </a>
+
 <div id="panorama" style="width:50%;height:50%"></div>
 </body>
 </html>

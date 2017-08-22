@@ -138,6 +138,7 @@
             {{--<span class="mws-dropdown-notif">35</span>--}}
 
             <!-- Messages dropdown -->
+
             <div class="mws-dropdown-box">
                 <div class="mws-dropdown-content">
                     <ul class="mws-messages">
@@ -197,8 +198,19 @@
         <div id="mws-user-info" class="mws-inset">
 
             <!-- User Photo -->
+
+            <div id="mws-user-message" class="mws-dropdown-menu">
+                <div class="mws-dropdown-trigger">
+                    欢迎您:
+                    @if( session('useradmin')){{session('useradmin')->aname}} @else
+                        <a class="mws-dropdown-trigger" href="#0" style="font-size:12px;">请登录</a>
+
+                    @endif
+                </div>
+
+            </div>
             <div id="mws-user-photo">
-                <img src="example/profile.jpg" alt="User Photo">
+                <img src="/home/img/head_180.jpg" alt="User Photo">
             </div>
 
             <!-- Username and Functions -->
@@ -227,12 +239,12 @@
         </div>
 
         <!-- Searchbox -->
-        <div id="mws-searchbox" class="mws-inset">
-            <form action="typography.html">
-                <input type="text" class="mws-search-input" placeholder="Search...">
-                <button type="submit" class="mws-search-submit"><i class="icon-search"></i></button>
-            </form>
-        </div>
+        {{--<div id="mws-searchbox" class="mws-inset">--}}
+            {{--<form action="typography.html">--}}
+                {{--<input type="text" class="mws-search-input" placeholder="Search...">--}}
+                {{--<button type="submit" class="mws-search-submit"><i class="icon-search"></i></button>--}}
+            {{--</form>--}}
+        {{--</div>--}}
 
         <!-- Main Navigation -->
         <div id="mws-navigation">
@@ -282,10 +294,12 @@
                             <ul>
                                 <li><a href="/admins/saleuser/create" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户添加</a></li>
                                 <li><a href="/admins/saleuser" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户列表</a></li>
+                                <li><a href="/admins/xianshi" style=" color: #ffffff !important;display: block;font-size: 12px;margin-left: 10px;padding: 4px 0 4px 40px;text-decoration: none;text-shadow: none;">用户审核</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="#"><i class="icon-list"></i>商家分类</a>
                     <ul>
@@ -299,6 +313,12 @@
                         <li><a href="/admins/youqing/create">添加链接</a></li>
                         <li><a href="/admins/youqing">查看链接</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="icon-list"></i>网站配置</a>
+                    <ul>
+                        <li><a href="{{url('admins/config')}}">网站配置</a></li>
+
                 </li>
             </ul>
         </div>

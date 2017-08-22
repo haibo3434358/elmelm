@@ -52,6 +52,7 @@
                     <label>
                         {{--<input type="file"  name="gpic"  id="file_upload" multiple="true" />--}}
                         <input type="file" name='gpic[]' value="{{$dd->gpic}}" multiple readonly="readonly" >
+                        <img src="{{$dd->gpic}}" alt="" style="width:80px;height:80px;">
                         {{--<input id="file_upload" name="gpic" type="file" multiple="true">--}}
                         {{--<span>上传图片</span>--}}
                         {{--<input type="button" value="上传" />--}}

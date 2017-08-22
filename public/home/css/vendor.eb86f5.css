@@ -3666,7 +3666,15 @@ a.badge:focus,a.badge:hover {
 
 .topbar-nav-link {
 	padding: 0 10px;
+
+
 	width: 114px;
+
+	width: 106px;
+
+
+	width: 114px;
+
 	color: inherit;
 	position: relative;
 	cursor: pointer;

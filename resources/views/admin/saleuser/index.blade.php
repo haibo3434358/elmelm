@@ -1,4 +1,4 @@
-@extends('layouts.admins.index')
+@extends('layouts.index')
 
 @section('title','后台首页')
 
@@ -30,7 +30,7 @@
             <td class="center">{{$v->exname}}</td>
             <td class="center">{{$v->exphone}}</td>
             <td class="center">{{$v->semail}}</td>
-            <td class="center">{{$v->slogo}}</td>
+            <td class="center"><img src="{{$v->slogo}}" alt="" style="width:80px"></td>
             <td class="center">{{$v->exarea}}</td>
             <td class="center">
                 <a href="user_detail.html" title="编辑" class="link_icon">e</a>
