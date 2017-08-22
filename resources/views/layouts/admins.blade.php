@@ -138,6 +138,7 @@
             {{--<span class="mws-dropdown-notif">35</span>--}}
 
             <!-- Messages dropdown -->
+
             <div class="mws-dropdown-box">
                 <div class="mws-dropdown-content">
                     <ul class="mws-messages">
@@ -197,8 +198,19 @@
         <div id="mws-user-info" class="mws-inset">
 
             <!-- User Photo -->
+
+            <div id="mws-user-message" class="mws-dropdown-menu">
+                <div class="mws-dropdown-trigger">
+                    欢迎您:
+                    @if( session('useradmin')){{session('useradmin')->aname}} @else
+                        <a class="mws-dropdown-trigger" href="#0" style="font-size:12px;">请登录</a>
+
+                    @endif
+                </div>
+
+            </div>
             <div id="mws-user-photo">
-                <img src="example/profile.jpg" alt="User Photo">
+                <img src="/home/img/head_180.jpg" alt="User Photo">
             </div>
 
             <!-- Username and Functions -->
@@ -227,12 +239,12 @@
         </div>
 
         <!-- Searchbox -->
-        <div id="mws-searchbox" class="mws-inset">
-            <form action="typography.html">
-                <input type="text" class="mws-search-input" placeholder="Search...">
-                <button type="submit" class="mws-search-submit"><i class="icon-search"></i></button>
-            </form>
-        </div>
+        {{--<div id="mws-searchbox" class="mws-inset">--}}
+            {{--<form action="typography.html">--}}
+                {{--<input type="text" class="mws-search-input" placeholder="Search...">--}}
+                {{--<button type="submit" class="mws-search-submit"><i class="icon-search"></i></button>--}}
+            {{--</form>--}}
+        {{--</div>--}}
 
         <!-- Main Navigation -->
         <div id="mws-navigation">

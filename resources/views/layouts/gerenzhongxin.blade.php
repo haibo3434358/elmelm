@@ -138,30 +138,16 @@
                             <span class="topbar-profilebox-wrapper" ng-show="$root.user.username">
                                         <!-- ngIf: $root.topbarType===' checkout' -->
                                         <span class="topbar-profilebox-username ng-binding">
-                                            seeklegend
+                                           @if(session('user1'))
+                                               {{session('user1')->uname}}
+                                               @endif
                                         </span>
                                 <!-- ngIf: $root.topbarType===' checkout' -->
                                 <!-- ngIf: $root.topbarType !==' checkout' -->
                                         <span class="topbar-profilebox-btn icon-arrow-down ng-scope" ng-if="$root.topbarType !== &#39;checkout&#39;">
                                         </span>
                                 <!-- end ngIf: $root.topbarType !==' checkout' -->
-                                        <div class="dropbox topbar-profilebox-dropbox">
-                                            <a class="icon-profile" href="https://www.ele.me/profile" hardjump="">
-                                                个人中心
-                                            </a>
-                                            <a class="icon-star" href="https://www.ele.me/profile/favor" hardjump="">
-                                                我的收藏
-                                            </a>
-                                            <a class="icon-location" href="https://www.ele.me/profile/address" hardjump="">
-                                                我的地址
-                                            </a>
-                                            <a class="icon-setting" href="https://www.ele.me/profile/security" hardjump="">
-                                                安全设置
-                                            </a>
-                                            <a class="icon-logout" href="JavaScript:" ng-click="logout()">
-                                                退出登录
-                                            </a>
-                                        </div>
+
                                     </span>
                         </div>
                     </div>

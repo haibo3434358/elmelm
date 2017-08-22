@@ -24,10 +24,9 @@ class DingDanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $dizhi = $request->input('dizhi');
-        return view('home.baidu',compact('dizhi'));
+        return view('home.baidu');
     }
 
     /**

@@ -185,16 +185,14 @@ Route::group([],function(){
 
     //前台首页
     Route::get('home/shouye','Home\ShouYeController@index');
-    
+
     //遍历二级分类的路由
 
     Route::post('home/shouye/{id}','Home\ShouYeController@erji');
     //由二级分类home/gerenzhongxin遍历商家路由
     Route::post('home/shouye/sj/{id}','Home\ShouYeController@shangJ');
 
-
-
-        //前台登录
+    //前台登录
     Route::get('home/login','Home\LoginController@index');
     //验证用户名
     Route::post('home/login/yanzhenguname','Home\LoginController@YanZhengUname');

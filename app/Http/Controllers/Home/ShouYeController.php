@@ -60,23 +60,32 @@ foreach($exname as $k=>$v){
         $cate2 = DB::table('elm_cate')->where('pid','>',0)->lists('cate_name');
         //通过cate_name找exname,通过exname找店家详情
         $sj = [];
-        foreach($cate2 as $k=>$v){
-           $sj[] =  DB::table('elm_sale_cate')->join('elm_saleuser_detail','elm_sale_cate.exname','=','elm_saleuser_detail.exname')->where('cate_name',$v)->get();
-        }
-//        dd($sj);
-//
-        $re = [];
-//        将店铺详情表与商品表联查
+        //如果一级分类下有二级分类
+        if($cate2){
+            foreach($cate2 as $k=>$v){
+                $sj[] =  DB::table('elm_sale_cate')->join('elm_saleuser_detail','elm_sale_cate.exname','=','elm_saleuser_detail.exname')->where('cate_name',$v)->get();
+            }
+            $re = [];
+            //如果二级分类下有商家
+            //        将店铺详情表与商品表联查
 
-        foreach($sj as $k=>$v){
-            foreach($v as $kk=>$vv){
-                $re[] =  DB::table('elm_saleuser_detail')
-                    ->select(DB::raw('elm_saleuser_detail.sxid,exname,ofee,slogo,sum(gcount) as sum'))
-                    ->Join('elm_goods_detail','elm_saleuser_detail.sxid','=','elm_goods_detail.sxid')
-                    ->where('elm_saleuser_detail.sxid',$v[$kk]->sxid)->get() ;
+            foreach($sj as $k=>$v){
+                foreach($v as $kk=>$vv){
+                    $re[] =  DB::table('elm_saleuser_detail')
+                        ->select(DB::raw('elm_saleuser_detail.sxid,exname,ofee,slogo,sum(gcount) as sum'))
+                        ->Join('elm_goods_detail','elm_saleuser_detail.sxid','=','elm_goods_detail.sxid')
+                        ->where('elm_saleuser_detail.sxid',$v[$kk]->sxid)->get() ;
+                }
+
             }
 
+
         }
+
+//        dd($sj);
+//
+
+
 //        dd($re);
         return view('home.shouye',compact('cate1','re'));
 
