@@ -21,7 +21,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-
+	dd(111);
     }
 
    public function quit()
