@@ -79,7 +79,7 @@ class SessionController extends Controller
     {
 //        dd($id);
 //        dd($request->all());
-//        session(['uxid'=>14]);
+        session(['uxid'=>14]);
         $shangjia = DB::table('elm_saleuser_detail')->where('sxid',$id)->get();
         $uid = DB::table('elm_user_detail')->leftjoin('elm_user_addr','elm_user_detail.uid','=','elm_user_addr.uid')->where('uxid',session('uxid'))->get();
 //       dd($uid);

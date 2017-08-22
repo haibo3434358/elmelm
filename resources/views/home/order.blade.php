@@ -64,7 +64,7 @@
      <i class="icon-order-success"></i> 
      <h2 class="omodule-title">饿单已成功提交，请耐心等待你的外卖</h2> 
      <p class="omodule-title-caption">饿单总额26元，可以先准备好零钱哦～</p> 
-     <p class="omodule-actions"> <a class="ui-btn btn-small" href="{{url('home/order')}}">追踪饿单</a> <a class="ui-btn btn-small" href="{{url("home/shouye")}}">返回餐厅</a></p>
+     <p class="omodule-actions"> <a class="ui-btn btn-small" href="{{url('home/myorder')}}">追踪饿单</a> <a class="ui-btn btn-small" href="{{url("home/shouye")}}">返回餐厅</a></p>
     </article> 
     <aside class="osuccess-aside"> 
      <p class="tip"><i class="icon-order-note"></i>新增积分会在餐厅确认饿单后入账。</p> 
