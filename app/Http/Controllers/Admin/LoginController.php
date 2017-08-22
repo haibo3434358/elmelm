@@ -69,7 +69,7 @@ class LoginController extends Controller
             return back()->with('error','验证码错误');
         }
             session(['user'=>$user]);
-//        dd(session('code'));
+//        dd(session('user')->sid);
         return redirect('admin/dingdan');
 //        if(strtoupper($input['code']) != session('code') ){
 //            return back()->with('error','验证码错误');

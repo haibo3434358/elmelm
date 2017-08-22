@@ -21,7 +21,7 @@ class DingDanController extends Controller
     public function index(Request $request)
     {
 
-        $dingdan = DingDan::paginate(5);
+        $dingdan = DingDan::where('umsg','like','%'.$request->input('search').'%')->paginate($request->input('num',5));
 //        DB::table('elm_order')->where()
         return view('admin.dingdan.dingdan',compact('dingdan','request'));
     }

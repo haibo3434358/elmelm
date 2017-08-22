@@ -46,6 +46,10 @@ class ShangPinController extends Controller
 //
 //());
         $res = $request->except('_token','gpic');
+        //得到用户信息session值  session('user')
+        dd(session('user'));
+        $quan = DB::table('elm_saleuser')->join('elm_saleuser_detail','elm_saleuser.sid','=','elm_saleuser_detail.sid')->join('elm_goods_detail','elm_saleuser_detail.sxid','=','elm_goods_detail.sxid');
+        dd($quan->gid);
         $id = DB::table('elm_goods_detail')->orderBy('sxid')->insertGetId($res);
         if (!$id) {
             die('没有找到最后插入的id');
